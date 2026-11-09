@@ -1,0 +1,301 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Render Shots</title>
+<style>body{margin:0;background:#222;color:#eee;font:13px system-ui} #log{position:fixed;top:0;left:0;padding:6px;white-space:pre;z-index:2;background:#000a}</style>
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+               "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }
+</script>
+</head>
+<body>
+<div id="log"></div>
+<script type="module">
+// Renders level thumbnails, dossier portraits & the menu background from the real assets,
+// and POSTs them to tools/dev_server.py -> public/assets/ui/renders/*.png
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import * as SkeletonUtils from 'three/addons/utils/SkeletonUtils.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+const A = '../public/assets/';
+const log = s => document.getElementById('log').textContent += s + '\n';
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.0;
+document.body.appendChild(renderer.domElement);
+const envTex = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), 0.04).texture;
+const loader = new GLTFLoader(); const cache = {}; const texL = new THREE.TextureLoader(); const tcache = {};
+
+async function M(path) {
+  if (!cache[path]) cache[path] = await loader.loadAsync(A + 'models/' + path + '.glb');
+  const g = cache[path]; const o = SkeletonUtils.clone(g.scene);
+  o.userData.clips = g.animations;
+  o.traverse(c => { if (c.isMesh) { c.castShadow = c.receiveShadow = true; c.frustumCulled = false; } });
+  return o;
+}
+function T(name, rx = 1, ry = 1) {
+  const t = texL.load(A + 'textures/' + name + '.png'); t.colorSpace = THREE.SRGBColorSpace;
+  t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(rx, ry); t.anisotropy = 8; return t;
+}
+const loadT = name => new Promise(r => { const t = texL.load(A + 'textures/' + name + '.png', () => r(t)); t.colorSpace = THREE.SRGBColorSpace; t.wrapS = t.wrapT = THREE.RepeatWrapping; t.anisotropy = 8; });
+async function plane(tex, w, h, rx = 1, ry = 1, rough = 0.9) {
+  const t = await loadT(tex); t.repeat.set(rx, ry);
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshStandardMaterial({ map: t, roughness: rough }));
+  m.receiveShadow = true; return m;
+}
+function put(o, x, y, z, ry = 0, s = 1) { o.position.set(x, y, z); o.rotation.y = THREE.MathUtils.degToRad(ry); o.scale.setScalar(s); return o; }
+function pose(o, clip, t = 0) {
+  const c = THREE.AnimationClip.findByName(o.userData.clips, clip); if (!c) return o;
+  const mx = new THREE.AnimationMixer(o); mx.clipAction(c).play(); mx.setTime(t); o.userData.mixer = mx; return o;
+}
+// NOTE: a multi-material group exports as a Group named 'acc_x' with child meshes 'acc_x_1'.. -> toggle the whole subtree
+function show(o, names, vis = true) { for (const n of names) { const x = o.getObjectByName(n); if (x) x.traverse(c => c.visible = vis); } return o; }
+function hideAcc(o) { o.traverse(c => { if (c.name.startsWith('acc_')) c.visible = false; }); return o; }
+function tint(o, group, hex) {
+  o.traverse(c => { if (c.isMesh && c.material.name.startsWith('tint_' + group)) { c.material = c.material.clone(); c.material.vertexColors = false; c.material.color.set(hex); } });
+  return o;
+}
+function attach(o, socket, child, pos = [0, 0, 0], rot = [0, 0, 0], s = 1) {
+  const k = o.getObjectByName(socket); child.position.set(...pos); child.rotation.set(...rot.map(THREE.MathUtils.degToRad)); child.scale.setScalar(s); k.add(child); return child;
+}
+const SKIN = ['#f1c7a5', '#e8b48a', '#c98a64', '#a8714a', '#7b4a2e', '#f6d3b8', '#d9a27a'];
+function gary(o, real = false, rnd = Math.random) {
+  hideAcc(o); show(o, ['hair'], false);
+  show(o, ['acc_combover', 'acc_glasses', 'acc_tie', 'acc_lanyard', real ? 'acc_mustache' : 'acc_mustache_crooked']);
+  if (real) show(o, ['acc_tie_stain', 'acc_watch_R', 'acc_pen_ear', 'acc_mug']);
+  else { if (rnd() < 0.4) show(o, ['acc_watch_L']); if (rnd() < 0.3) show(o, ['acc_pen_ear']); if (rnd() < 0.25) show(o, ['acc_tie_stain']); }
+  return o;
+}
+function lights(scene, { sun = '#fff1d6', sunI = 2.4, sunPos = [6, 10, 6], hemiSky = '#cfe6ff', hemiGround = '#7a6a58', hemiI = 0.9, area = 14 } = {}) {
+  const s = new THREE.DirectionalLight(sun, sunI); s.position.set(...sunPos); s.castShadow = true;
+  s.shadow.mapSize.set(2048, 2048); Object.assign(s.shadow.camera, { left: -area, right: area, top: area, bottom: -area, near: 0.5, far: 80 });
+  s.shadow.bias = -0.0005; s.shadow.normalBias = 0.02; scene.add(s); scene.add(new THREE.HemisphereLight(hemiSky, hemiGround, hemiI));
+}
+function skyTex(top, bottom) {
+  const c = document.createElement('canvas'); c.width = 4; c.height = 256; const g = c.getContext('2d');
+  const gr = g.createLinearGradient(0, 0, 0, 256); gr.addColorStop(0, top); gr.addColorStop(1, bottom); g.fillStyle = gr; g.fillRect(0, 0, 4, 256);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+async function shot(name, w, h, build) {
+  const scene = new THREE.Scene(); scene.environment = envTex; scene.environmentIntensity = 0.35;
+  const cam = new THREE.PerspectiveCamera(45, w / h, 0.05, 300);
+  await build(scene, cam);
+  await new Promise(r => setTimeout(r, 400));
+  renderer.setPixelRatio(1); renderer.setSize(w, h); cam.aspect = w / h; cam.updateProjectionMatrix();
+  renderer.render(scene, cam);
+  const url = renderer.domElement.toDataURL('image/png');
+  const res = await fetch('/save?name=' + name + '.png', { method: 'POST', body: url });
+  log(name + ' ' + res.status);
+}
+let seed = 3; const R = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+
+// ------------------------------------------------------------------ LEVEL 1: OFFICE
+async function office(scene, cam) {
+  scene.background = new THREE.Color('#dcd6c8');
+  const fl = await plane('carpet_office', 24, 24, 10, 10); fl.rotation.x = -Math.PI / 2; scene.add(fl);
+  const wall = await plane('wall_office', 24, 4, 8, 1.3); wall.position.set(0, 2, -4.5); scene.add(wall);
+  const ban = await plane('banner_happy_gary_day', 4.4, 1.1, 1, 1); ban.position.set(0, 2.55, -4.48); scene.add(ban);
+  for (const x of [-3.2, 0, 3.2]) {
+    scene.add(put(await M('props/desk_setup'), x, 0, -3.1));
+    scene.add(put(await M('props/office_chair'), x, 0, -2.45, 180));
+    if (x !== 0) scene.add(put(pose(gary(await M('characters/office_worker'), false, R), 'SitTyping', R()), x, 0, -2.45, 180));
+  }
+  for (const x of [-4.8, 4.8]) scene.add(put(await M('props/cubicle_wall'), x, 0, -1.2, 90));
+  scene.add(put(await M('props/water_cooler'), -5.6, 0, -4.1)); scene.add(put(await M('props/potted_plant'), 5.5, 0, -4.0));
+  scene.add(put(await M('props/printer'), 4.2, 0, -4.0)); scene.add(put(await M('props/whiteboard'), -2.0, 0, -4.3, 0, 0.9));
+  const spots = [[-2.2, -0.6, 25, 'Talk'], [-0.9, 0.3, -10, 'Idle'], [0.5, -0.8, 5, 'Hum'], [1.6, 0.4, -30, 'Sip'], [2.9, -0.4, -20, 'Talk'], [-3.3, 0.6, 30, 'Idle']];
+  for (let i = 0; i < spots.length; i++) {
+    const [x, z, r, a] = spots[i]; const real = a === 'Hum';
+    const o = gary(await M('characters/office_worker'), real, R); tint(o, 'skin', SKIN[i % SKIN.length]);
+    if (!real && R() < 0.5) show(o, ['acc_party_hat']);
+    scene.add(put(pose(o, a, R() * 2), x, 0, z, r, 0.95 + R() * 0.1));
+  }
+  for (const x of [-3, 0, 3]) { const l = await M('props/ceiling_light'); scene.add(put(l, x, 3.2, -1.5)); }
+  lights(scene, { sunPos: [3, 9, 6], sunI: 2.0, hemiI: 1.1 });
+  cam.fov = 50; cam.position.set(0.4, 1.65, 4.6); cam.lookAt(0, 1.15, -1.5);
+}
+
+// ------------------------------------------------------------------ LEVEL 2: ROOFTOPS
+async function rooftops(scene, cam) {
+  scene.background = skyTex('#5aa0e6', '#ffd9b0');
+  const roof = await plane('roof_gravel', 12, 18, 4, 6); roof.rotation.x = -Math.PI / 2; roof.position.z = -3; scene.add(roof);
+  const roof2 = await plane('roof_gravel', 12, 14, 4, 5); roof2.rotation.x = -Math.PI / 2; roof2.position.set(1, -1.2, -20); scene.add(roof2);
+  const facadeMat = new THREE.MeshStandardMaterial({ map: await loadT('building_facade') });
+  const bld = (w, h, d, x, y, z) => { const t = facadeMat.map.clone(); t.needsUpdate = true; t.repeat.set(w / 12, h / 12);
+    const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), new THREE.MeshStandardMaterial({ map: t })); m.position.set(x, y - h / 2, z); m.receiveShadow = true; scene.add(m); };
+  bld(12, 30, 18, 0, -0.01, -3); bld(12, 30, 14, 1, -1.21, -20);
+  for (let i = 0; i < 14; i++) bld(8 + R() * 8, 20 + R() * 25, 10, -40 + i * 7 + R() * 3, -3 + R() * 6, -45 - R() * 25);
+  for (let i = 0; i < 8; i++) bld(10, 30, 10, (i % 2 ? 1 : -1) * (20 + R() * 10), -4 + R() * 3, -10 - i * 6);
+  for (const z of [-11, -7, -3, 1, 5]) { scene.add(put(await M('props/building_trim'), -6, 0, z, 90)); scene.add(put(await M('props/building_trim'), 6, 0, z, 90)); }
+  scene.add(put(await M('props/ac_unit'), -3.6, 0, -2.5, 10)); scene.add(put(await M('props/ac_unit'), 3.8, 0, -6, -5));
+  scene.add(put(await M('props/chimney'), 2.6, 0, 0.2)); scene.add(put(await M('props/vent_pipe'), -1.6, 0, 0.8));
+  scene.add(put(await M('props/water_tower'), -4.0, 0, -9.5)); scene.add(put(await M('props/antenna'), 4.6, 0, -10));
+  scene.add(put(await M('props/clothesline'), 1.5, 0, -8.5, 0)); scene.add(put(await M('props/satellite_dish'), 4.8, 0, 1.5, -40));
+  const pl = await M('props/plank'); put(pl, 0.4, -0.6, -13.5); pl.rotation.x = 0.1; scene.add(pl);
+  scene.add(put(await M('props/wedding_arch'), 1.2, -1.2, -24));
+  for (let i = 0; i < 6; i++) scene.add(put(await M('props/wedding_chair'), -0.6 + (i % 3) * 0.6 + (i < 3 ? 0 : 1.8), -1.2, -21.5, 0));
+  const bb = await M('props/billboard'); put(bb, -5.0, 0, -5.5, 35, 0.9); scene.add(bb);
+  const face = bb.getObjectByName('face'); face.material = new THREE.MeshStandardMaterial({ map: await loadT('billboard_cold_feet'), emissive: '#222', roughness: 0.6 });
+  // box geometry face has 6 sides; keep it simple: front plane overlay
+  const bp = await plane('billboard_cold_feet', 4.2, 2.0, 1, 1, 0.6); bp.position.set(0, 3.9, 0.075); bb.add(bp);
+  const groom = await M('characters/groom'); show(hideAcc(groom), ['acc_sweat']);
+  scene.add(put(pose(groom, 'RunLookBack', 0.12), 0.4, 0, -3.4, 180));
+  lights(scene, { sun: '#ffe2b8', sunPos: [-8, 9, 4], sunI: 2.6, area: 16 });
+  cam.fov = 55; cam.position.set(-0.6, 1.7, 4.4); cam.lookAt(0.3, 1.1, -6);
+}
+
+// ------------------------------------------------------------------ LEVEL 3: PARK
+async function park(scene, cam) {
+  scene.background = skyTex('#69b7f0', '#d6f0ff');
+  const g = await plane('grass', 80, 80, 20, 20); g.rotation.x = -Math.PI / 2; scene.add(g);
+  const path = await plane('dirt_path', 3, 40, 1, 12); path.rotation.x = -Math.PI / 2; path.rotation.z = 0.25; path.position.set(1.5, 0.01, -8); scene.add(path);
+  const pond = new THREE.Mesh(new THREE.CircleGeometry(4, 40), new THREE.MeshStandardMaterial({ map: await loadT('water'), roughness: 0.1, metalness: 0.1 }));
+  pond.rotation.x = -Math.PI / 2; pond.position.set(-5, 0.02, -9); pond.scale.y = 0.7; scene.add(pond);
+  const trees = [['tree_round', -8, -14], ['tree_pine', 6, -12], ['tree_round', 9, -6], ['tree_pine', -10, -4], ['tree_round', 2, -20], ['tree_pine', -3, -22], ['tree_round', 12, -18], ['tree_pine', 15, -10]];
+  for (const [n, x, z] of trees) scene.add(put(await M('props/' + n), x, 0, z, R() * 360, 0.9 + R() * 0.4));
+  scene.add(put(await M('props/bench'), 4.5, 0, -4, -60)); scene.add(put(await M('props/lamp_post'), 3.2, 0, -7));
+  scene.add(put(await M('props/bush'), -2.8, 0, -3.5)); scene.add(put(await M('props/trash_can'), 5.2, 0, -2.4)); scene.add(put(await M('props/rock'), -6.5, 0, -5.5));
+  const sign = await M('props/signpost'); put(sign, -3.0, 0, -1.2, 25); scene.add(sign);
+  const sp = await plane('sign_dont_feed_geese', 1.1, 0.5, 1, 1, 0.8); sp.position.set(0, 1.5, 0.081); sign.add(sp);
+  const geese = [[0.3, -1.4, 175, 'Charge', true], [-1.5, -3.2, 150, 'Honk'], [1.9, -3.6, 210, 'Honk'], [-0.4, -5.5, 120, 'Walk'], [2.8, -7.5, 200, 'Idle'], [-4.5, -7.0, 90, 'Flap']];
+  for (const [x, z, r, a, boss] of geese) {
+    const o = pose(await M('characters/goose'), a, a === 'Honk' ? 0.3 : R()); scene.add(put(o, x, 0, z, r, boss ? 1.25 : 1));
+    if (boss) { const n = await M('props/sticky_note'); attach(o, 'socket_beak', n, [0, -0.07, -0.02], [90, 0, 0], 1.5); }
+  }
+  lights(scene, { sunPos: [5, 10, 7], area: 14 });
+  cam.fov = 55; cam.position.set(0.5, 0.75, 2.4); cam.lookAt(0, 0.7, -4);
+}
+
+// ------------------------------------------------------------------ LEVEL 4: GRANDMA
+async function grandma(scene, cam) {
+  scene.background = new THREE.Color('#3a2a22');
+  const fl = await plane('wood_floor', 10, 10, 5, 5); fl.rotation.x = -Math.PI / 2; scene.add(fl);
+  const back = await plane('wallpaper_floral', 10, 3, 5, 1.5); back.position.set(0, 1.5, -4); scene.add(back);
+  const left = await plane('wallpaper_floral', 10, 3, 5, 1.5); left.position.set(-4, 1.5, 0); left.rotation.y = Math.PI / 2; scene.add(left);
+  const right = await plane('wallpaper_floral', 10, 3, 5, 1.5); right.position.set(4, 1.5, 0); right.rotation.y = -Math.PI / 2; scene.add(right);
+  scene.add(put(await M('props/rug'), 0, 0, -1.4));
+  scene.add(put(await M('props/sofa'), 0.2, 0, -3.4)); scene.add(put(await M('props/armchair'), -2.8, 0, -1.6, 60));
+  scene.add(put(await M('props/crt_tv'), 3.2, 0, -1.6, -90)); scene.add(put(await M('props/bookshelf'), -3.8, 0, -3.3, 90));
+  scene.add(put(await M('props/floor_lamp'), -1.6, 0, -3.5)); scene.add(put(await M('props/side_table'), 2.0, 0, -3.3));
+  scene.add(put(await M('props/router'), 2.0, 0.623, -3.3, -20)); scene.add(put(await M('props/vase_flowers'), 2.2, 0.623, -3.4));
+  const fp = await M('props/framed_picture'); put(fp, -0.4, 1.55, -3.99); scene.add(fp);
+  const cs = await plane('cross_stitch_home', 0.42, 0.315, 1, 1); cs.position.set(0, 0.3, 0.046); fp.add(cs);
+  const gm = await M('characters/grandma'); show(hideAcc(gm), ['acc_glasses', 'acc_apron', 'acc_ladle']);
+  scene.add(put(pose(gm, 'Point', 0.6), 0.9, 0, -1.6, -15));
+  scene.add(put(pose(await M('characters/cat'), 'Idle', 1.2), -1.2, 0, -0.9, 40));
+  scene.add(put(await M('props/yarn_ball'), -0.6, 0, -0.4, 30));
+  scene.add(put(await M('props/soup_bowl'), 0.3, 0.42, -3.0));
+  const lamp = new THREE.PointLight('#ffcf8a', 6, 8, 1.5); lamp.position.set(-1.6, 1.5, -3.3); scene.add(lamp);
+  const tv = new THREE.PointLight('#9ad7a0', 3, 5); tv.position.set(2.6, 0.8, -1.6); scene.add(tv);
+  lights(scene, { sun: '#ffd9a8', sunI: 1.4, sunPos: [3, 8, 6], hemiSky: '#ffe6cc', hemiGround: '#4a3020', hemiI: 0.7, area: 6 });
+  cam.fov = 55; cam.position.set(0.2, 1.1, 2.6); cam.lookAt(0.5, 1.0, -2);
+}
+
+// ------------------------------------------------------------------ LEVEL 5: PARTY
+async function party(scene, cam) {
+  scene.background = skyTex('#7cc4ff', '#fff0f6');
+  const g = await plane('grass', 60, 60, 15, 15); g.rotation.x = -Math.PI / 2; scene.add(g);
+  scene.add(put(await M('props/bouncy_castle'), -4.5, 0, -7, 20));
+  scene.add(put(await M('props/party_table'), 0, 0, -1.8)); scene.add(put(await M('props/birthday_cake'), 0, 0.765, -1.8));
+  const cols = ['#ff5a5a', '#4dabf7', '#ffd43b', '#69db7c', '#b197fc', '#ff8cc6'];
+  for (let i = 0; i < 5; i++) scene.add(put(tint(await M('props/gift_box'), 'wrap', cols[i]), 2 + (i % 3) * 0.5, 0, -2.6 - Math.floor(i / 3) * 0.5, R() * 60));
+  for (let i = 0; i < 6; i++) scene.add(put(tint(await M('props/balloon_plain'), 'balloon', cols[i]), -1.2 + i * 0.25, 0, -2.4 - (i % 2) * 0.2, 0, 1 + (i % 3) * 0.1));
+  const dogs = [[-1.4, -0.8, 60, 'Hop', 0.1], [1.3, -0.6, -70, 'Bite', 0.2], [0.6, -3.4, 200, 'Hop', 0.3], [-2.2, -2.8, 120, 'Idle', 0.5], [2.4, -1.0, -100, 'Hop', 0.05]];
+  for (let i = 0; i < dogs.length; i++) { const [x, z, r, a, t] = dogs[i]; scene.add(put(pose(tint(await M('characters/balloon_dog'), 'balloon', cols[i]), a, t), x, 0, z, r, 1.3)); }
+  scene.add(put(pose(await M('characters/balloon_giraffe'), 'Stomp', 0.45), 4.5, 0, -9, -30));
+  const ban = await plane('banner_birthday', 4, 1, 1, 1); ban.position.set(-4.3, 3.6, -5.3); ban.rotation.y = 0.35; scene.add(ban);
+  lights(scene, { sunPos: [-4, 10, 6], area: 14 });
+  cam.fov = 52; cam.position.set(0.3, 1.45, 3.1); cam.lookAt(0, 0.8, -3);
+}
+
+// ------------------------------------------------------------------ LEVEL 6: BEDROOM (you are tiny)
+async function bedroom(scene, cam) {
+  scene.background = new THREE.Color('#1b1d33');
+  const S = 10;
+  const fl = await plane('carpet_bedroom', 80, 80, 12, 12); fl.rotation.x = -Math.PI / 2; scene.add(fl);
+  const wall = new THREE.Mesh(new THREE.PlaneGeometry(80, 30), new THREE.MeshStandardMaterial({ color: '#6f7fb8' })); wall.position.set(0, 15, -24); scene.add(wall);
+  scene.add(put(await M('props/bed'), -12, 0, -12, 0, S)); scene.add(put(await M('props/nightstand'), 4, 0, -20, 0, S));
+  scene.add(put(await M('props/slipper'), 3.5, 0, -2, -30, S)); scene.add(put(await M('props/slipper'), 5.5, 0, -1, -10, S));
+  scene.add(put(await M('props/book_stack'), -4.5, 0, -5, 20, S)); scene.add(put(await M('props/sock'), 1.5, 0, -8.5, 70, S));
+  const ph = await M('props/phone'); scene.add(put(ph, -2.5, 0, 0.2, 30, S));
+  scene.add(put(pose(await M('characters/alarm_clock_boss'), 'Ring', 0.07), 0.2, 0, -5.0, -10, 2.4));
+  const glow = new THREE.PointLight('#ff8a3d', 30, 20, 1.6); glow.position.set(0, 6, -5); scene.add(glow);
+  const pg = new THREE.PointLight('#6ab0ff', 10, 8); pg.position.set(-2.5, 1.0, 0.3); scene.add(pg);
+  lights(scene, { sun: '#ffb27a', sunI: 1.6, sunPos: [10, 14, 8], hemiSky: '#8fa0ff', hemiGround: '#2a2030', hemiI: 0.6, area: 22 });
+  cam.fov = 60; cam.position.set(1.2, 0.9, 4.0); cam.lookAt(0, 3.0, -5);
+}
+
+// ------------------------------------------------------------------ PORTRAITS
+async function portrait(scene, cam, build, bg) {
+  scene.background = skyTex(bg[0], bg[1]); await build(scene, cam);
+  lights(scene, { sunPos: [2, 4, 6], sunI: 2.2, hemiI: 1.2, area: 4 });
+}
+const P = {
+  gary: async (s, c) => { const o = gary(await M('characters/office_worker'), true); tint(o, 'skin', '#e8b48a'); s.add(pose(o, 'Idle', 0)); c.fov = 30; c.position.set(0.35, 1.68, 1.9); c.lookAt(0, 1.55, 0); },
+  groom: async (s, c) => { const o = await M('characters/groom'); show(hideAcc(o), ['acc_sweat']); s.add(pose(o, 'Idle', 0)); c.fov = 30; c.position.set(0.35, 1.72, 1.9); c.lookAt(0, 1.6, 0); },
+  grandma: async (s, c) => { const o = await M('characters/grandma'); show(hideAcc(o), ['acc_glasses', 'acc_apron', 'acc_ladle']); s.add(pose(o, 'Idle', 0)); c.fov = 32; c.position.set(0.35, 1.48, 1.8); c.lookAt(0, 1.38, 0); },
+  goose: async (s, c) => { const o = pose(await M('characters/goose'), 'Honk', 0.3); s.add(o); const n = await M('props/sticky_note'); attach(o, 'socket_beak', n, [0, -0.07, -0.02], [90, 0, 0], 1.5);
+    c.fov = 30; c.position.set(0.9, 0.85, 1.6); c.lookAt(0, 0.62, 0.1); },
+  cat: async (s, c) => { s.add(pose(await M('characters/cat'), 'Idle', 0.5)); c.fov = 30; c.position.set(0.5, 0.45, 1.0); c.lookAt(0, 0.28, 0); },
+  balloon_giraffe: async (s, c) => { s.add(pose(await M('characters/balloon_giraffe'), 'Idle', 0)); c.fov = 35; c.position.set(4, 3.0, 6.5); c.lookAt(0, 2.2, 0); },
+  alarm_clock: async (s, c) => { s.add(pose(await M('characters/alarm_clock_boss'), 'Ring', 0.07)); c.fov = 35; c.position.set(1.4, 1.8, 5); c.lookAt(0, 1.4, 0); },
+};
+
+async function lineup(scene, cam) {
+  scene.background = new THREE.Color('#2b2d42');
+  const c = document.createElement('canvas'); c.width = 2048; c.height = 512; const g = c.getContext('2d');
+  g.fillStyle = '#e9e4d8'; g.fillRect(0, 0, 2048, 512); g.fillStyle = '#333'; g.font = 'bold 28px Arial';
+  for (let i = 0; i <= 10; i++) { const y = 512 - i * 46.5; g.fillRect(0, y - 2, 2048, i % 2 ? 2 : 5); if (i % 2 === 0) { g.fillText((i * 0.2).toFixed(1) + 'm', 10, y - 8); g.fillText((i * 0.2).toFixed(1) + 'm', 1960, y - 8); } }
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
+  const wall = new THREE.Mesh(new THREE.PlaneGeometry(8.8, 2.2), new THREE.MeshStandardMaterial({ map: t })); wall.position.set(0, 1.1, -0.6); wall.receiveShadow = true; scene.add(wall);
+  const fl = new THREE.Mesh(new THREE.PlaneGeometry(20, 6), new THREE.MeshStandardMaterial({ color: '#555a66' })); fl.rotation.x = -Math.PI / 2; fl.receiveShadow = true; scene.add(fl);
+  seed = 11;
+  for (let i = 0; i < 5; i++) {
+    const o = gary(await M('characters/office_worker'), i === 3, R); tint(o, 'skin', SKIN[(i * 2) % SKIN.length]);
+    const lbl = document.createElement('canvas'); lbl.width = 256; lbl.height = 96; const lg = lbl.getContext('2d'); lg.fillStyle = '#111'; lg.fillRect(0, 0, 256, 96);
+    lg.fillStyle = '#fff'; lg.font = 'bold 60px Arial'; lg.textAlign = 'center'; lg.fillText('#' + (i + 1), 128, 70);
+    const lt = new THREE.CanvasTexture(lbl); lt.colorSpace = THREE.SRGBColorSpace;
+    const card = new THREE.Mesh(new THREE.PlaneGeometry(0.3, 0.11), new THREE.MeshBasicMaterial({ map: lt }));
+    scene.add(put(pose(o, 'Idle', i * 0.7), -2.8 + i * 1.4, 0, 0, 0, 0.94 + R() * 0.1));
+    card.position.set(-2.8 + i * 1.4, 1.12, 0.2); scene.add(card);
+  }
+  lights(scene, { sunPos: [0.5, 6, 6], sunI: 2.4, hemiI: 1.1, area: 6 });
+  cam.fov = 38; cam.position.set(0, 1.15, 5.6); cam.lookAt(0, 1.0, 0);
+}
+
+async function menu(scene, cam) {
+  scene.background = skyTex('#3b2a6e', '#ff8a5c');
+  const fl = new THREE.Mesh(new THREE.CircleGeometry(9, 64), new THREE.MeshStandardMaterial({ color: '#3a3360', roughness: 0.6 })); fl.rotation.x = -Math.PI / 2; fl.receiveShadow = true; scene.add(fl);
+  const ring = new THREE.Mesh(new THREE.RingGeometry(8.6, 9, 64), new THREE.MeshStandardMaterial({ color: '#ffd43b', emissive: '#ffb000', emissiveIntensity: 0.6 })); ring.rotation.x = -Math.PI / 2; ring.position.y = 0.01; scene.add(ring);
+  const g = gary(await M('characters/office_worker'), true); scene.add(put(pose(g, 'Wave', 0.3), -1.0, 0, 0.5, 15));
+  const gr = await M('characters/groom'); show(hideAcc(gr), ['acc_sweat']); scene.add(put(pose(gr, 'Panic', 0.1), 1.0, 0, 0.2, -20));
+  const br = await M('characters/bride'); show(hideAcc(br), ['acc_veil', 'acc_bouquet']); scene.add(put(pose(br, 'Point', 0.6), 2.6, 0, -0.8, -50));
+  const gm = await M('characters/grandma'); show(hideAcc(gm), ['acc_glasses', 'acc_apron', 'acc_ladle']); scene.add(put(pose(gm, 'Stir', 0.3), -2.7, 0, -0.4, 30));
+  scene.add(put(pose(await M('characters/goose'), 'Charge', 0.1), 0.1, 0, 1.6, 0, 1.1));
+  scene.add(put(pose(await M('characters/goose'), 'Honk', 0.3), -3.4, 0, 1.4, 40));
+  scene.add(put(pose(await M('characters/cat'), 'Idle', 0.3), -1.8, 0, 1.7, 30, 1.2));
+  scene.add(put(pose(tint(await M('characters/balloon_dog'), 'balloon', '#4dabf7'), 'Hop', 0.12), 2.0, 0, 1.5, -40, 1.3));
+  scene.add(put(pose(await M('characters/balloon_giraffe'), 'Idle', 0.3), 5.6, 0, -4.5, -40, 0.9));
+  scene.add(put(pose(await M('characters/alarm_clock_boss'), 'Ring', 0.07), -5.6, 0, -4.2, 30, 1.0));
+  const spot = new THREE.SpotLight('#fff3d0', 120, 30, 0.6, 0.5, 1.5); spot.position.set(0, 12, 6); spot.target.position.set(0, 0, 0); spot.castShadow = true; spot.shadow.mapSize.set(2048, 2048); scene.add(spot, spot.target);
+  scene.add(new THREE.HemisphereLight('#c9b6ff', '#3a2a40', 1.0));
+  cam.fov = 42; cam.position.set(0, 1.6, 7.6); cam.lookAt(0, 1.2, 0);
+}
+
+const only = new URLSearchParams(location.search).get('only');
+const jobs = [
+  ['thumb_l1_office', 960, 540, office], ['thumb_l2_rooftops', 960, 540, rooftops], ['thumb_l3_park', 960, 540, park],
+  ['thumb_l4_grandma', 960, 540, grandma], ['thumb_l5_party', 960, 540, party], ['thumb_l6_bedroom', 960, 540, bedroom],
+  ['lineup_garys', 1600, 700, lineup], ['menu_background', 1920, 1080, menu],
+  ...Object.entries(P).map(([k, fn]) => ['portrait_' + k, 512, 512, (s, c) => portrait(s, c, fn, k.includes('alarm') || k.includes('giraffe') ? ['#ff6b6b', '#2b2d42'] : ['#e9e4d8', '#b8c4d6'])]),
+];
+for (const [name, w, h, fn] of jobs) {
+  if (only && !name.includes(only)) continue;
+  try { seed = 3; await shot(name, w, h, fn); } catch (e) { log('ERR ' + name + ' ' + e.message); console.error(e); }
+}
+log('DONE');
+</script>
+</body>
+</html>

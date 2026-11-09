@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Asset Preview</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  :root { --bg:#1e2230; --fg:#eef; --panel:#2a3044; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:13px system-ui, sans-serif; overflow:hidden; }
+  #ui { position:fixed; top:8px; left:8px; background:var(--panel); padding:8px; border-radius:8px; display:flex; gap:6px; flex-wrap:wrap; max-width:calc(100vw - 32px); z-index:2 }
+  select, button { font:inherit; }
+  #info { position:fixed; bottom:8px; left:8px; background:var(--panel); padding:6px 8px; border-radius:6px; white-space:pre; max-width:calc(100vw - 32px); overflow:auto }
+  .lbl { position:absolute; color:#fff; font-size:11px; background:#0008; padding:1px 4px; border-radius:3px; transform:translate(-50%,0); pointer-events:none }
+</style>
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+               "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }
+</script>
+</head>
+<body>
+<div id="ui">
+  <select id="cat"></select>
+  <select id="model"></select>
+  <select id="anim"></select>
+  <button id="lineup">Lineup this category</button>
+  <label><input type="checkbox" id="accs"> show all acc_*</label>
+</div>
+<div id="info"></div>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+const BASE = '../public/assets/models/';
+const cats = ['characters','props','weapons'];
+const manifests = {};
+for (const c of cats) { try { manifests[c] = await (await fetch(BASE + '_manifest_' + c + '.json')).json(); } catch(e) {} }
+
+const renderer = new THREE.WebGLRenderer({ antialias:true });
+renderer.setPixelRatio(devicePixelRatio); renderer.setSize(innerWidth, innerHeight);
+renderer.shadowMap.enabled = true; renderer.toneMapping = THREE.ACESFilmicToneMapping;
+document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene(); scene.background = new THREE.Color('#9fc6e8');
+scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), 0.04).texture;
+const sun = new THREE.DirectionalLight('#fff3e0', 2.2); sun.position.set(3,6,4); sun.castShadow = true;
+sun.shadow.mapSize.set(2048,2048); Object.assign(sun.shadow.camera, {left:-8,right:8,top:8,bottom:-8}); scene.add(sun);
+scene.add(new THREE.HemisphereLight('#cfe6ff', '#6b5a48', 0.8));
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(60,60), new THREE.MeshStandardMaterial({color:'#7c8b6a'}));
+ground.rotation.x = -Math.PI/2; ground.receiveShadow = true; scene.add(ground);
+const camera = new THREE.PerspectiveCamera(40, innerWidth/innerHeight, 0.01, 200);
+camera.position.set(1.6, 1.4, 2.6);
+const controls = new OrbitControls(camera, renderer.domElement); controls.target.set(0,0.9,0);
+const loader = new GLTFLoader();
+let root = new THREE.Group(); scene.add(root);
+let mixers = [];
+const q = new URLSearchParams(location.search);
+
+const $ = id => document.getElementById(id);
+for (const c of cats) if (manifests[c]) $('cat').add(new Option(c, c));
+function fillModels() { $('model').innerHTML=''; for (const k of Object.keys(manifests[$('cat').value]||{})) $('model').add(new Option(k,k)); }
+$('cat').onchange = () => { fillModels(); load(); };
+$('model').onchange = load; $('anim').onchange = playSel; $('accs').onchange = load;
+$('lineup').onclick = lineup;
+
+function prep(obj) {
+  obj.traverse(o => { if (o.isMesh) { o.castShadow = o.receiveShadow = true; o.frustumCulled = false;
+    if (!$('accs').checked && o.name.startsWith('acc_') ) o.visible = false;
+  }});
+}
+function clear() { scene.remove(root); root = new THREE.Group(); scene.add(root); mixers = []; document.querySelectorAll('.lbl').forEach(e=>e.remove()); }
+
+async function load() {
+  clear();
+  const name = $('model').value, info = manifests[$('cat').value][name];
+  const g = await loader.loadAsync('../public/' + info.file);
+  prep(g.scene); root.add(g.scene);
+  const mixer = new THREE.AnimationMixer(g.scene); mixers.push(mixer);
+  $('anim').innerHTML=''; $('anim').add(new Option('(none)',''));
+  g.animations.forEach(a => $('anim').add(new Option(a.name, a.name)));
+  root.userData = { g, mixer };
+  if (q.get('a')) { $('anim').value = q.get('a'); }
+  playSel();
+  const s = info.size_m, h = Math.max(...s);
+  controls.target.set(0, (info.bbox_min[1]+info.bbox_max[1])/2, 0);
+  camera.position.set(h*1.1, info.bbox_max[1]*0.8 + h*0.3, h*1.9);
+  $('info').textContent = JSON.stringify({...info, animations: info.animations.map(a=>a.name).join(', ')}, null, 1);
+}
+function playSel() {
+  const {g, mixer} = root.userData; if (!g) return; mixer.stopAllAction();
+  const clip = g.animations.find(a => a.name === $('anim').value);
+  if (clip) mixer.clipAction(clip).play();
+}
+async function lineup() {
+  clear();
+  const m = manifests[$('cat').value]; let x = 0; const items = [];
+  for (const [name, info] of Object.entries(m)) {
+    if (q.get('level') && info.level !== q.get('level')) continue;
+    const g = await loader.loadAsync('../public/' + info.file); prep(g.scene);
+    const w = Math.max(info.size_m[0], info.size_m[2]) ; x += w/2 + 0.25;
+    g.scene.position.x = x; x += w/2;
+    root.add(g.scene); items.push([name, g.scene, info]);
+    if (q.get('a') && g.animations.length) { const mx = new THREE.AnimationMixer(g.scene); const c = THREE.AnimationClip.findByName(g.animations, q.get('a')) || g.animations[0]; mx.clipAction(c).play(); mixers.push(mx); }
+  }
+  root.position.x = -x/2;
+  const H = Math.max(...items.map(i=>i[2].size_m[1]));
+  controls.target.set(0, H/2.5, 0); camera.position.set(0, H*0.8, Math.max(x*0.75, H*2));
+  for (const [name, obj] of items) { const d = document.createElement('div'); d.className='lbl'; d.textContent=name; d.obj=obj; document.body.appendChild(d); }
+}
+window.view = (px,py,pz,tx,ty,tz) => { camera.position.set(px,py,pz); controls.target.set(tx,ty,tz); };
+window.playAnim = n => { $('anim').value = n; playSel(); };
+const clock = new THREE.Clock();
+renderer.setAnimationLoop(() => {
+  const dt = clock.getDelta(); mixers.forEach(m => m.update(dt)); controls.update(); renderer.render(scene, camera);
+  document.querySelectorAll('.lbl').forEach(d => { const v = new THREE.Vector3(); d.obj.getWorldPosition(v); v.project(camera);
+    d.style.left = ((v.x+1)/2*innerWidth)+'px'; d.style.top = ((-v.y+1)/2*innerHeight + 8)+'px'; });
+});
+addEventListener('resize', () => { camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); });
+if (q.get('cat')) $('cat').value = q.get('cat');
+fillModels();
+if (q.get('m')) $('model').value = q.get('m');
+if (q.get('accs')) $('accs').checked = true;
+if (q.get('lineup')) lineup(); else load();
+</script>
+</body>
+</html>

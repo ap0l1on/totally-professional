@@ -1,0 +1,260 @@
+{
+ "carpet_office": {
+  "file": "assets/textures/carpet_office.png",
+  "size": [
+   512,
+   512
+  ],
+  "tileable": true,
+  "use": "Office floor",
+  "metres_per_tile": 2
+ },
+ "wall_office": {
+  "file": "assets/textures/wall_office.png",
+  "size": [
+   512,
+   512
+  ],
+  "tileable": true,
+  "use": "Office walls (beige)",
+  "metres_per_tile": 3
+ },
+ "ceiling_tiles": {
+  "file": "assets/textures/ceiling_tiles.png",
+  "size": [
+   512,
+   512
+  ],
+  "tileable": true,
+  "use": "Office ceiling (2x2 tiles per texture)",
+  "metres_per_tile": 1.2
+ },
+ "wood_floor": {
+  "file": "assets/textures/wood_floor.png",
+  "size": [
+   512,
+   512
+  ],
+  "tileable": true,
+  "use": "Grandma house floor / bedroom floor",
+  "metres_per_tile": 2
+ },
+ "brick": {
+  "file": "assets/textures/brick.png",
+  "size": [
+   512,
+   512
+  ],
+  "tileable": true,
+  "use": "Chimneys, building walls",
+  "metres_per_tile": 2
+ },
+ "roof_gravel": {
+  "file": "assets/textures/roof_gravel.png",
+  "size": [
+   512,
+   512
+  ],
+  "tileable": true,
+  "use": "Flat rooftops (L2)",
+  "metres_per_tile": 3
+ },
+ "concrete": {
+  "file": "assets/textures/concrete.png",
+  "size": [
+   512,
+   512
+  ],
+  "tileable": true,
+  "use": "Ledges, sidewalks",
+  "metres_per_tile": 3
+ },
+ "grass": {
+  "file": "assets/textures/grass.png",
+  "size": [
+   512,
+   512
+  ],
+  "tileable": true,
+  "use": "Park, party lawn",
+  "metres_per_tile": 4
+ },
+ "dirt_path": {
+  "file": "assets/textures/dirt_path.png",
+  "size": [
+   512,
+   512
+  ],
+  "tileable": true,
+  "use": "Park paths",
+  "metres_per_tile": 3
+ },
+ "water": {
+  "file": "assets/textures/water.png",
+  "size": [
+   512,
+   512
+  ],
+  "tileable": true,
+  "use": "Pond (scroll UVs slowly)",
+  "metres_per_tile": 6
+ },
+ "wallpaper_floral": {
+  "file": "assets/textures/wallpaper_floral.png",
+  "size": [
+   512,
+   512
+  ],
+  "tileable": true,
+  "use": "Grandma house walls",
+  "metres_per_tile": 2
+ },
+ "tile_checker": {
+  "file": "assets/textures/tile_checker.png",
+  "size": [
+   512,
+   512
+  ],
+  "tileable": true,
+  "use": "Grandma kitchen floor",
+  "metres_per_tile": 2
+ },
+ "carpet_bedroom": {
+  "file": "assets/textures/carpet_bedroom.png",
+  "size": [
+   512,
+   512
+  ],
+  "tileable": true,
+  "use": "L6 giant bedroom floor (scale up a lot: you are tiny)",
+  "metres_per_tile": 1
+ },
+ "building_facade": {
+  "file": "assets/textures/building_facade.png",
+  "size": [
+   512,
+   512
+  ],
+  "tileable": true,
+  "use": "Rooftop-level building walls (4x4 windows per tile)",
+  "metres_per_tile": 12
+ },
+ "party_stripes": {
+  "file": "assets/textures/party_stripes.png",
+  "size": [
+   512,
+   512
+  ],
+  "tileable": true,
+  "use": "Party tent / backdrop",
+  "metres_per_tile": 2
+ },
+ "banner_happy_gary_day": {
+  "file": "assets/textures/banner_happy_gary_day.png",
+  "size": [
+   1536,
+   384
+  ],
+  "tileable": false,
+  "use": "L1 office banner (ratio 4:1)"
+ },
+ "poster_gary_employee": {
+  "file": "assets/textures/poster_gary_employee.png",
+  "size": [
+   512,
+   640
+  ],
+  "tileable": false,
+  "use": "L1 wall poster. Leave the blank middle for a render of Gary (ui/renders/portrait_gary.png) or draw a frame."
+ },
+ "sign_dont_feed_geese": {
+  "file": "assets/textures/sign_dont_feed_geese.png",
+  "size": [
+   1100,
+   500
+  ],
+  "tileable": false,
+  "use": "L3 park signpost face (signpost.glb node \"face\")"
+ },
+ "sign_launch_codes": {
+  "file": "assets/textures/sign_launch_codes.png",
+  "size": [
+   600,
+   600
+  ],
+  "tileable": false,
+  "use": "L3 sticky note close-up / HUD item"
+ },
+ "billboard_cold_feet": {
+  "file": "assets/textures/billboard_cold_feet.png",
+  "size": [
+   1260,
+   600
+  ],
+  "tileable": false,
+  "use": "L2 billboard (billboard.glb node \"face\")"
+ },
+ "billboard_megacorp": {
+  "file": "assets/textures/billboard_megacorp.png",
+  "size": [
+   1260,
+   600
+  ],
+  "tileable": false,
+  "use": "L2 billboard alt"
+ },
+ "banner_birthday": {
+  "file": "assets/textures/banner_birthday.png",
+  "size": [
+   1536,
+   384
+  ],
+  "tileable": false,
+  "use": "L5 party banner"
+ },
+ "mug_okayest_boss": {
+  "file": "assets/textures/mug_okayest_boss.png",
+  "size": [
+   512,
+   160
+  ],
+  "tileable": false,
+  "use": "Gary's mug wrap"
+ },
+ "name_badge_gary": {
+  "file": "assets/textures/name_badge_gary.png",
+  "size": [
+   256,
+   340
+  ],
+  "tileable": false,
+  "use": "Lanyard badge"
+ },
+ "wifi_password_note": {
+  "file": "assets/textures/wifi_password_note.png",
+  "size": [
+   600,
+   400
+  ],
+  "tileable": false,
+  "use": "L4 fridge note"
+ },
+ "cross_stitch_home": {
+  "file": "assets/textures/cross_stitch_home.png",
+  "size": [
+   600,
+   450
+  ],
+  "tileable": false,
+  "use": "L4 framed cross-stitch (framed_picture.glb node 'canvas')"
+ },
+ "clock_face_text": {
+  "file": "assets/textures/clock_face_text.png",
+  "size": [
+   512,
+   128
+  ],
+  "tileable": false,
+  "use": "L6 digital readout / HUD"
+ }
+}

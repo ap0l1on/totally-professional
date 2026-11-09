@@ -1,0 +1,921 @@
+{
+ "office_worker": {
+  "file": "assets/models/characters/office_worker.glb",
+  "triangles": 10552,
+  "size_m": [
+   0.58,
+   2.015,
+   0.332
+  ],
+  "bbox_min": [
+   -0.29,
+   0.0,
+   -0.147
+  ],
+  "bbox_max": [
+   0.29,
+   2.015,
+   0.185
+  ],
+  "meshes": [
+   "pants",
+   "shirt",
+   "skin",
+   "body",
+   "hair",
+   "acc_combover",
+   "acc_mustache",
+   "acc_mustache_crooked",
+   "acc_glasses",
+   "acc_tie",
+   "acc_tie_stain",
+   "acc_watch_L",
+   "acc_watch_R",
+   "acc_pen_ear",
+   "acc_lanyard",
+   "acc_party_hat",
+   "acc_mug"
+  ],
+  "pivots": {},
+  "tint_materials": [
+   "tint_pants",
+   "tint_shirt",
+   "tint_skin",
+   "tint_hair"
+  ],
+  "markers": [
+   "socket_hand_L",
+   "socket_hand_R",
+   "socket_head_top",
+   "socket_chest",
+   "socket_back"
+  ],
+  "bones": [
+   "hips",
+   "spine",
+   "chest",
+   "neck",
+   "head",
+   "upperarm_L",
+   "forearm_L",
+   "hand_L",
+   "upperarm_R",
+   "forearm_R",
+   "hand_R",
+   "thigh_L",
+   "shin_L",
+   "foot_L",
+   "thigh_R",
+   "shin_R",
+   "foot_R"
+  ],
+  "animations": [
+   {
+    "name": "Walk",
+    "duration": 1.0,
+    "loop": true
+   },
+   {
+    "name": "Run",
+    "duration": 0.6,
+    "loop": true
+   },
+   {
+    "name": "RunLookBack",
+    "duration": 0.6,
+    "loop": true
+   },
+   {
+    "name": "Panic",
+    "duration": 0.5,
+    "loop": true
+   },
+   {
+    "name": "Idle",
+    "duration": 4.0,
+    "loop": true
+   },
+   {
+    "name": "Hum",
+    "duration": 2.0,
+    "loop": true
+   },
+   {
+    "name": "Talk",
+    "duration": 2.4,
+    "loop": true
+   },
+   {
+    "name": "Fall",
+    "duration": 1.0,
+    "loop": false
+   },
+   {
+    "name": "Sleep",
+    "duration": 3.0,
+    "loop": true
+   },
+   {
+    "name": "Wave",
+    "duration": 1.2,
+    "loop": true
+   },
+   {
+    "name": "Celebrate",
+    "duration": 0.8,
+    "loop": true
+   },
+   {
+    "name": "Jump",
+    "duration": 0.7,
+    "loop": false
+   },
+   {
+    "name": "SitTyping",
+    "duration": 1.0,
+    "loop": true
+   },
+   {
+    "name": "Sip",
+    "duration": 4.0,
+    "loop": true
+   },
+   {
+    "name": "Stir",
+    "duration": 1.4,
+    "loop": true
+   },
+   {
+    "name": "Point",
+    "duration": 0.6,
+    "loop": false
+   }
+  ],
+  "hipsY": 0.95,
+  "usage": "Gary costume = show acc_combover+acc_mustache(_crooked)+acc_glasses+acc_tie+acc_lanyard, hide hair. Tells: acc_mustache (real) vs acc_mustache_crooked (fake), acc_tie_stain, acc_watch_R vs acc_watch_L, acc_pen_ear, acc_mug."
+ },
+ "groom": {
+  "file": "assets/models/characters/groom.glb",
+  "triangles": 7132,
+  "size_m": [
+   0.579,
+   1.92,
+   0.343
+  ],
+  "bbox_min": [
+   -0.289,
+   0.0,
+   -0.158
+  ],
+  "bbox_max": [
+   0.289,
+   1.92,
+   0.185
+  ],
+  "meshes": [
+   "pants",
+   "shirt",
+   "skin",
+   "body",
+   "hair",
+   "acc_sweat"
+  ],
+  "pivots": {},
+  "tint_materials": [
+   "tint_pants",
+   "tint_shirt",
+   "tint_skin",
+   "tint_hair"
+  ],
+  "markers": [
+   "socket_hand_L",
+   "socket_hand_R",
+   "socket_head_top",
+   "socket_chest",
+   "socket_back"
+  ],
+  "bones": [
+   "hips",
+   "spine",
+   "chest",
+   "neck",
+   "head",
+   "upperarm_L",
+   "forearm_L",
+   "hand_L",
+   "upperarm_R",
+   "forearm_R",
+   "hand_R",
+   "thigh_L",
+   "shin_L",
+   "foot_L",
+   "thigh_R",
+   "shin_R",
+   "foot_R"
+  ],
+  "animations": [
+   {
+    "name": "Walk",
+    "duration": 1.0,
+    "loop": true
+   },
+   {
+    "name": "Run",
+    "duration": 0.6,
+    "loop": true
+   },
+   {
+    "name": "RunLookBack",
+    "duration": 0.6,
+    "loop": true
+   },
+   {
+    "name": "Panic",
+    "duration": 0.5,
+    "loop": true
+   },
+   {
+    "name": "Idle",
+    "duration": 4.0,
+    "loop": true
+   },
+   {
+    "name": "Hum",
+    "duration": 2.0,
+    "loop": true
+   },
+   {
+    "name": "Talk",
+    "duration": 2.4,
+    "loop": true
+   },
+   {
+    "name": "Fall",
+    "duration": 1.0,
+    "loop": false
+   },
+   {
+    "name": "Sleep",
+    "duration": 3.0,
+    "loop": true
+   },
+   {
+    "name": "Wave",
+    "duration": 1.2,
+    "loop": true
+   },
+   {
+    "name": "Celebrate",
+    "duration": 0.8,
+    "loop": true
+   },
+   {
+    "name": "Jump",
+    "duration": 0.7,
+    "loop": false
+   },
+   {
+    "name": "SitTyping",
+    "duration": 1.0,
+    "loop": true
+   },
+   {
+    "name": "Sip",
+    "duration": 4.0,
+    "loop": true
+   },
+   {
+    "name": "Stir",
+    "duration": 1.4,
+    "loop": true
+   },
+   {
+    "name": "Point",
+    "duration": 0.6,
+    "loop": false
+   }
+  ],
+  "hipsY": 0.978
+ },
+ "bride": {
+  "file": "assets/models/characters/bride.glb",
+  "triangles": 7728,
+  "size_m": [
+   1.0,
+   1.795,
+   1.0
+  ],
+  "bbox_min": [
+   -0.5,
+   0.0,
+   -0.5
+  ],
+  "bbox_max": [
+   0.5,
+   1.795,
+   0.5
+  ],
+  "meshes": [
+   "pants",
+   "shirt",
+   "skin",
+   "body",
+   "hair",
+   "acc_veil",
+   "acc_bouquet"
+  ],
+  "pivots": {},
+  "tint_materials": [
+   "tint_pants",
+   "tint_shirt",
+   "tint_skin",
+   "tint_hair"
+  ],
+  "markers": [
+   "socket_hand_L",
+   "socket_hand_R",
+   "socket_head_top",
+   "socket_chest",
+   "socket_back"
+  ],
+  "bones": [
+   "hips",
+   "spine",
+   "chest",
+   "neck",
+   "head",
+   "upperarm_L",
+   "forearm_L",
+   "hand_L",
+   "upperarm_R",
+   "forearm_R",
+   "hand_R",
+   "thigh_L",
+   "shin_L",
+   "foot_L",
+   "thigh_R",
+   "shin_R",
+   "foot_R"
+  ],
+  "animations": [
+   {
+    "name": "Walk",
+    "duration": 1.0,
+    "loop": true
+   },
+   {
+    "name": "Run",
+    "duration": 0.6,
+    "loop": true
+   },
+   {
+    "name": "RunLookBack",
+    "duration": 0.6,
+    "loop": true
+   },
+   {
+    "name": "Panic",
+    "duration": 0.5,
+    "loop": true
+   },
+   {
+    "name": "Idle",
+    "duration": 4.0,
+    "loop": true
+   },
+   {
+    "name": "Hum",
+    "duration": 2.0,
+    "loop": true
+   },
+   {
+    "name": "Talk",
+    "duration": 2.4,
+    "loop": true
+   },
+   {
+    "name": "Fall",
+    "duration": 1.0,
+    "loop": false
+   },
+   {
+    "name": "Sleep",
+    "duration": 3.0,
+    "loop": true
+   },
+   {
+    "name": "Wave",
+    "duration": 1.2,
+    "loop": true
+   },
+   {
+    "name": "Celebrate",
+    "duration": 0.8,
+    "loop": true
+   },
+   {
+    "name": "Jump",
+    "duration": 0.7,
+    "loop": false
+   },
+   {
+    "name": "SitTyping",
+    "duration": 1.0,
+    "loop": true
+   },
+   {
+    "name": "Sip",
+    "duration": 4.0,
+    "loop": true
+   },
+   {
+    "name": "Stir",
+    "duration": 1.4,
+    "loop": true
+   },
+   {
+    "name": "Point",
+    "duration": 0.6,
+    "loop": false
+   }
+  ],
+  "hipsY": 0.921
+ },
+ "grandma": {
+  "file": "assets/models/characters/grandma.glb",
+  "triangles": 8500,
+  "size_m": [
+   0.6,
+   1.703,
+   0.6
+  ],
+  "bbox_min": [
+   -0.3,
+   0.0,
+   -0.3
+  ],
+  "bbox_max": [
+   0.3,
+   1.703,
+   0.3
+  ],
+  "meshes": [
+   "pants",
+   "shirt",
+   "skin",
+   "body",
+   "hair",
+   "acc_glasses",
+   "acc_apron",
+   "acc_ladle"
+  ],
+  "pivots": {},
+  "tint_materials": [
+   "tint_pants",
+   "tint_shirt",
+   "tint_skin",
+   "tint_hair"
+  ],
+  "markers": [
+   "socket_hand_L",
+   "socket_hand_R",
+   "socket_head_top",
+   "socket_chest",
+   "socket_back"
+  ],
+  "bones": [
+   "hips",
+   "spine",
+   "chest",
+   "neck",
+   "head",
+   "upperarm_L",
+   "forearm_L",
+   "hand_L",
+   "upperarm_R",
+   "forearm_R",
+   "hand_R",
+   "thigh_L",
+   "shin_L",
+   "foot_L",
+   "thigh_R",
+   "shin_R",
+   "foot_R"
+  ],
+  "animations": [
+   {
+    "name": "Walk",
+    "duration": 1.0,
+    "loop": true
+   },
+   {
+    "name": "Run",
+    "duration": 0.6,
+    "loop": true
+   },
+   {
+    "name": "RunLookBack",
+    "duration": 0.6,
+    "loop": true
+   },
+   {
+    "name": "Panic",
+    "duration": 0.5,
+    "loop": true
+   },
+   {
+    "name": "Idle",
+    "duration": 4.0,
+    "loop": true
+   },
+   {
+    "name": "Hum",
+    "duration": 2.0,
+    "loop": true
+   },
+   {
+    "name": "Talk",
+    "duration": 2.4,
+    "loop": true
+   },
+   {
+    "name": "Fall",
+    "duration": 1.0,
+    "loop": false
+   },
+   {
+    "name": "Sleep",
+    "duration": 3.0,
+    "loop": true
+   },
+   {
+    "name": "Wave",
+    "duration": 1.2,
+    "loop": true
+   },
+   {
+    "name": "Celebrate",
+    "duration": 0.8,
+    "loop": true
+   },
+   {
+    "name": "Jump",
+    "duration": 0.7,
+    "loop": false
+   },
+   {
+    "name": "SitTyping",
+    "duration": 1.0,
+    "loop": true
+   },
+   {
+    "name": "Sip",
+    "duration": 4.0,
+    "loop": true
+   },
+   {
+    "name": "Stir",
+    "duration": 1.4,
+    "loop": true
+   },
+   {
+    "name": "Point",
+    "duration": 0.6,
+    "loop": false
+   }
+  ],
+  "hipsY": 0.855
+ },
+ "goose": {
+  "file": "assets/models/characters/goose.glb",
+  "triangles": 1976,
+  "size_m": [
+   0.98,
+   0.872,
+   0.811
+  ],
+  "bbox_min": [
+   -0.49,
+   0.004,
+   -0.421
+  ],
+  "bbox_max": [
+   0.49,
+   0.877,
+   0.391
+  ],
+  "meshes": [
+   "body"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [
+   "socket_beak"
+  ],
+  "bones": [
+   "body",
+   "neck1",
+   "neck2",
+   "head",
+   "jaw",
+   "wing_L",
+   "wing_R",
+   "leg_L",
+   "leg_R"
+  ],
+  "animations": [
+   {
+    "name": "Idle",
+    "duration": 3.0,
+    "loop": true
+   },
+   {
+    "name": "Walk",
+    "duration": 0.5,
+    "loop": true
+   },
+   {
+    "name": "Honk",
+    "duration": 0.7,
+    "loop": false
+   },
+   {
+    "name": "Charge",
+    "duration": 0.36,
+    "loop": true
+   },
+   {
+    "name": "Flap",
+    "duration": 0.5,
+    "loop": true
+   },
+   {
+    "name": "Netted",
+    "duration": 0.6,
+    "loop": true
+   },
+   {
+    "name": "Stunned",
+    "duration": 2.0,
+    "loop": true
+   }
+  ]
+ },
+ "cat": {
+  "file": "assets/models/characters/cat.glb",
+  "triangles": 2956,
+  "size_m": [
+   0.19,
+   0.562,
+   0.604
+  ],
+  "bbox_min": [
+   -0.095,
+   -0.0,
+   -0.282
+  ],
+  "bbox_max": [
+   0.095,
+   0.561,
+   0.322
+  ],
+  "meshes": [
+   "body"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [
+   "socket_mouth"
+  ],
+  "bones": [
+   "body",
+   "head",
+   "tail1",
+   "tail2",
+   "leg_FL",
+   "leg_FR",
+   "leg_BL",
+   "leg_BR"
+  ],
+  "animations": [
+   {
+    "name": "Idle",
+    "duration": 3.0,
+    "loop": true
+   },
+   {
+    "name": "Walk",
+    "duration": 0.6,
+    "loop": true
+   },
+   {
+    "name": "Swat",
+    "duration": 0.6,
+    "loop": false
+   },
+   {
+    "name": "Startled",
+    "duration": 0.5,
+    "loop": false
+   }
+  ]
+ },
+ "balloon_dog": {
+  "file": "assets/models/characters/balloon_dog.glb",
+  "triangles": 5024,
+  "size_m": [
+   0.299,
+   0.715,
+   0.799
+  ],
+  "bbox_min": [
+   -0.15,
+   -0.005,
+   -0.326
+  ],
+  "bbox_max": [
+   0.15,
+   0.71,
+   0.474
+  ],
+  "meshes": [
+   "balloon",
+   "face"
+  ],
+  "pivots": {},
+  "tint_materials": [
+   "tint_balloon"
+  ],
+  "markers": [],
+  "bones": [
+   "root",
+   "body",
+   "head",
+   "tail"
+  ],
+  "animations": [
+   {
+    "name": "Idle",
+    "duration": 1.6,
+    "loop": true
+   },
+   {
+    "name": "Hop",
+    "duration": 0.5,
+    "loop": true
+   },
+   {
+    "name": "Bite",
+    "duration": 0.5,
+    "loop": false
+   },
+   {
+    "name": "Pop",
+    "duration": 0.25,
+    "loop": false
+   }
+  ]
+ },
+ "balloon_giraffe": {
+  "file": "assets/models/characters/balloon_giraffe.glb",
+  "triangles": 5228,
+  "size_m": [
+   1.044,
+   4.27,
+   2.358
+  ],
+  "bbox_min": [
+   -0.522,
+   0.0,
+   -0.794
+  ],
+  "bbox_max": [
+   0.522,
+   4.27,
+   1.564
+  ],
+  "meshes": [
+   "balloon",
+   "face",
+   "spots"
+  ],
+  "pivots": {},
+  "tint_materials": [
+   "tint_balloon"
+  ],
+  "markers": [
+   "weakpoint_head"
+  ],
+  "bones": [
+   "root",
+   "body",
+   "neck",
+   "head",
+   "leg_FL",
+   "leg_FR",
+   "leg_BL",
+   "leg_BR"
+  ],
+  "animations": [
+   {
+    "name": "Idle",
+    "duration": 2.4,
+    "loop": true
+   },
+   {
+    "name": "Walk",
+    "duration": 1.2,
+    "loop": true
+   },
+   {
+    "name": "Stomp",
+    "duration": 1.2,
+    "loop": false
+   },
+   {
+    "name": "Hurt",
+    "duration": 0.5,
+    "loop": false
+   },
+   {
+    "name": "Pop",
+    "duration": 0.3,
+    "loop": false
+   }
+  ]
+ },
+ "alarm_clock_boss": {
+  "file": "assets/models/characters/alarm_clock_boss.glb",
+  "triangles": 5372,
+  "size_m": [
+   2.68,
+   2.688,
+   0.889
+  ],
+  "bbox_min": [
+   -1.34,
+   -0.008,
+   -0.51
+  ],
+  "bbox_max": [
+   1.34,
+   2.68,
+   0.379
+  ],
+  "meshes": [
+   "body",
+   "face",
+   "snooze"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [
+   "weakpoint_snooze"
+  ],
+  "bones": [
+   "root",
+   "body",
+   "bell_L",
+   "bell_R",
+   "hammer",
+   "hand_hour",
+   "hand_minute",
+   "leg_L",
+   "leg_R",
+   "arm_L",
+   "arm_R"
+  ],
+  "animations": [
+   {
+    "name": "Idle",
+    "duration": 2.0,
+    "loop": true
+   },
+   {
+    "name": "Ring",
+    "duration": 0.4,
+    "loop": true
+   },
+   {
+    "name": "Hop",
+    "duration": 0.9,
+    "loop": false
+   },
+   {
+    "name": "Charge",
+    "duration": 0.4,
+    "loop": true
+   },
+   {
+    "name": "Stunned",
+    "duration": 1.5,
+    "loop": true
+   },
+   {
+    "name": "Defeated",
+    "duration": 1.6,
+    "loop": false
+   }
+  ]
+ }
+}

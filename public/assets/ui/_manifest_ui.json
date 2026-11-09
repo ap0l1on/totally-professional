@@ -1,0 +1,122 @@
+{
+ "crosshair": {
+  "file": "assets/ui/icons/crosshair.svg",
+  "use": "Default crosshair (white, draw with a dark drop-shadow)"
+ },
+ "heart": {
+  "file": "assets/ui/icons/heart.svg",
+  "use": "Health"
+ },
+ "lock": {
+  "file": "assets/ui/icons/lock.svg",
+  "use": "Locked level"
+ },
+ "star": {
+  "file": "assets/ui/icons/star.svg",
+  "use": "Rating star (earned)"
+ },
+ "star_empty": {
+  "file": "assets/ui/icons/star_empty.svg",
+  "use": "Rating star (not earned)"
+ },
+ "check": {
+  "file": "assets/ui/icons/check.svg",
+  "use": "Level completed"
+ },
+ "clue_mustache": {
+  "file": "assets/ui/icons/clue_mustache.svg",
+  "use": "Clue: real (straight) mustache"
+ },
+ "clue_stain": {
+  "file": "assets/ui/icons/clue_stain.svg",
+  "use": "Clue: coffee stain on tie"
+ },
+ "clue_watch_right": {
+  "file": "assets/ui/icons/clue_watch_right.svg",
+  "use": "Clue: watch on RIGHT wrist"
+ },
+ "clue_pen": {
+  "file": "assets/ui/icons/clue_pen.svg",
+  "use": "Clue: pen behind ear"
+ },
+ "clue_mug": {
+  "file": "assets/ui/icons/clue_mug.svg",
+  "use": "Clue: carries the WORLD'S OKAYEST BOSS mug"
+ },
+ "clue_hum": {
+  "file": "assets/ui/icons/clue_hum.svg",
+  "use": "Clue: he hums (listen!)"
+ },
+ "clue_unknown": {
+  "file": "assets/ui/icons/clue_unknown.svg",
+  "use": "Clue not unlocked yet"
+ },
+ "soup": {
+  "file": "assets/ui/icons/soup.svg",
+  "use": "L4 soup meter (3 bowls = food coma = fail)"
+ },
+ "ring": {
+  "file": "assets/ui/icons/ring.svg",
+  "use": "L2 objective: the ring / groom"
+ },
+ "timer": {
+  "file": "assets/ui/icons/timer.svg",
+  "use": "Timer"
+ },
+ "cake": {
+  "file": "assets/ui/icons/cake.svg",
+  "use": "L5 cake health"
+ },
+ "snooze": {
+  "file": "assets/ui/icons/snooze.svg",
+  "use": "L6 weak point indicator"
+ },
+ "ammo_dart": {
+  "file": "assets/ui/icons/ammo_dart.svg",
+  "use": "Dart ammo"
+ },
+ "ammo_net": {
+  "file": "assets/ui/icons/ammo_net.svg",
+  "use": "Net ammo"
+ },
+ "ammo_water": {
+  "file": "assets/ui/icons/ammo_water.svg",
+  "use": "Water tank"
+ },
+ "ammo_pillow": {
+  "file": "assets/ui/icons/ammo_pillow.svg",
+  "use": "Pillow ammo"
+ },
+ "router": {
+  "file": "assets/ui/icons/router.svg",
+  "use": "L4 objective"
+ },
+ "eye": {
+  "file": "assets/ui/icons/eye.svg",
+  "use": "Stealth: being watched"
+ },
+ "exclaim": {
+  "file": "assets/ui/icons/exclaim.svg",
+  "use": "Spotted / alert"
+ },
+ "pause": {
+  "file": "assets/ui/icons/pause.svg",
+  "use": "Pause"
+ },
+ "sound_on": {
+  "file": "assets/ui/icons/sound_on.svg",
+  "use": "Sound on"
+ },
+ "sound_off": {
+  "file": "assets/ui/icons/sound_off.svg",
+  "use": "Sound off"
+ },
+ "logo": {
+  "file": "assets/ui/logo.svg",
+  "use": "Title logo (main menu). Game title: TOTALLY PROFESSIONAL"
+ },
+ "favicon": {
+  "file": "assets/ui/favicon.svg",
+  "use": "Browser tab icon"
+ }
+}

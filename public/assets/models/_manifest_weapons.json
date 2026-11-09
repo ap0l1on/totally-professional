@@ -1,0 +1,238 @@
+{
+ "dart_pistol": {
+  "file": "assets/models/weapons/dart_pistol.glb",
+  "triangles": 1056,
+  "size_m": [
+   0.086,
+   0.236,
+   0.43
+  ],
+  "bbox_min": [
+   -0.043,
+   -0.088,
+   -0.36
+  ],
+  "bbox_max": [
+   0.043,
+   0.147,
+   0.07
+  ],
+  "meshes": [
+   "main",
+   "loaded_dart"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [
+   "muzzle",
+   "grip_L"
+  ],
+  "bones": [],
+  "animations": [],
+  "level": "L1"
+ },
+ "dart": {
+  "file": "assets/models/weapons/dart.glb",
+  "triangles": 168,
+  "size_m": [
+   0.04,
+   0.04,
+   0.135
+  ],
+  "bbox_min": [
+   -0.02,
+   -0.02,
+   -0.08
+  ],
+  "bbox_max": [
+   0.02,
+   0.02,
+   0.055
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "Tranquilliser foam dart: tip points -Z. Sticks to whatever it hits.",
+  "level": "L1"
+ },
+ "net_launcher": {
+  "file": "assets/models/weapons/net_launcher.glb",
+  "triangles": 1512,
+  "size_m": [
+   0.18,
+   0.262,
+   0.546
+  ],
+  "bbox_min": [
+   -0.09,
+   -0.103,
+   -0.456
+  ],
+  "bbox_max": [
+   0.09,
+   0.159,
+   0.09
+  ],
+  "meshes": [
+   "main",
+   "loaded_net"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [
+   "muzzle",
+   "grip_L"
+  ],
+  "bones": [],
+  "animations": [],
+  "level": "L3"
+ },
+ "net_projectile": {
+  "file": "assets/models/weapons/net_projectile.glb",
+  "triangles": 1688,
+  "size_m": [
+   1.216,
+   1.216,
+   0.348
+  ],
+  "bbox_min": [
+   -0.608,
+   -0.608,
+   -0.308
+  ],
+  "bbox_max": [
+   0.608,
+   0.608,
+   0.04
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "Opened net, flies along -Z. Scale from 0.1 to 1 over first 0.2s of flight. On hit, drape over target + play goose \"Netted\".",
+  "level": "L3"
+ },
+ "water_blaster": {
+  "file": "assets/models/weapons/water_blaster.glb",
+  "triangles": 1248,
+  "size_m": [
+   0.14,
+   0.363,
+   0.61
+  ],
+  "bbox_min": [
+   -0.07,
+   -0.103,
+   -0.48
+  ],
+  "bbox_max": [
+   0.07,
+   0.26,
+   0.13
+  ],
+  "meshes": [
+   "main",
+   "water_level",
+   "pump"
+  ],
+  "pivots": {
+   "water_level": [
+    0,
+    0.17,
+    0.06
+   ]
+  },
+  "tint_materials": [],
+  "markers": [
+   "muzzle",
+   "grip_L"
+  ],
+  "bones": [],
+  "animations": [],
+  "note": "Scale node \"water_level\" on Z (0..1) for ammo. Slide node \"pump\" +Z to pump.",
+  "level": "L5"
+ },
+ "pillow_cannon": {
+  "file": "assets/models/weapons/pillow_cannon.glb",
+  "triangles": 2392,
+  "size_m": [
+   0.29,
+   0.383,
+   0.78
+  ],
+  "bbox_min": [
+   -0.145,
+   -0.133,
+   -0.56
+  ],
+  "bbox_max": [
+   0.145,
+   0.25,
+   0.22
+  ],
+  "meshes": [
+   "main",
+   "loaded_pillow"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [
+   "muzzle",
+   "grip_L"
+  ],
+  "bones": [],
+  "animations": [],
+  "note": "Shoulder-mounted: hold lower/right. Projectile = props/pillow.glb scaled 0.35.",
+  "level": "L6"
+ },
+ "fp_arms": {
+  "file": "assets/models/weapons/fp_arms.glb",
+  "triangles": 1944,
+  "size_m": [
+   0.537,
+   0.27,
+   0.642
+  ],
+  "bbox_min": [
+   -0.394,
+   -0.22,
+   -0.064
+  ],
+  "bbox_max": [
+   0.144,
+   0.05,
+   0.578
+  ],
+  "meshes": [
+   "arm_R",
+   "arm_L"
+  ],
+  "pivots": {
+   "arm_R": [
+    0.0,
+    0,
+    0
+   ],
+   "arm_L": [
+    -0.25,
+    0,
+    0
+   ]
+  },
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "Black-suit gloved arms. Nodes \"arm_R\"/\"arm_L\" have origin at the palm; place arm_R at the weapon origin and arm_L at the weapon \"grip_L\" marker (mirror pose is baked). Sleeves extend toward +Z (behind the camera).",
+  "level": "all"
+ }
+}

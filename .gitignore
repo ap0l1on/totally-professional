@@ -147,3 +147,12 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# macOS
+.DS_Store
+
+# Local assistant state
+.claude/
+
+# Local node build tooling (downloaded, not shipped)
+.devnode/

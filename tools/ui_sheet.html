@@ -1,0 +1,5 @@
+<!doctype html><html><body style="margin:0;background:#2b2d42;font:11px Arial;color:#fff">
+<img src="../public/assets/ui/logo.svg" style="width:600px;display:block;margin:10px auto">
+<div id="g" style="display:flex;flex-wrap:wrap;gap:10px;padding:10px"></div>
+<script>fetch('../public/assets/ui/_manifest_ui.json').then(r=>r.json()).then(m=>{for(const[k,v] of Object.entries(m)){if(k==='logo')continue;g.innerHTML+=`<div style="text-align:center;width:80px"><img src="../public/${v.file}" width=48><br>${k}</div>`}})</script>
+</body></html>

@@ -1,0 +1,2129 @@
+{
+ "desk_setup": {
+  "file": "assets/models/props/desk_setup.glb",
+  "triangles": 972,
+  "size_m": [
+   1.4,
+   1.29,
+   0.72
+  ],
+  "bbox_min": [
+   -0.7,
+   0.0,
+   -0.36
+  ],
+  "bbox_max": [
+   0.7,
+   1.29,
+   0.36
+  ],
+  "meshes": [
+   "main",
+   "screen"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "office"
+ },
+ "office_chair": {
+  "file": "assets/models/props/office_chair.glb",
+  "triangles": 1452,
+  "size_m": [
+   0.612,
+   1.118,
+   0.631
+  ],
+  "bbox_min": [
+   -0.306,
+   0.0,
+   -0.311
+  ],
+  "bbox_max": [
+   0.306,
+   1.118,
+   0.32
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "office"
+ },
+ "water_cooler": {
+  "file": "assets/models/props/water_cooler.glb",
+  "triangles": 648,
+  "size_m": [
+   0.32,
+   1.44,
+   0.38
+  ],
+  "bbox_min": [
+   -0.16,
+   0.0,
+   -0.16
+  ],
+  "bbox_max": [
+   0.16,
+   1.44,
+   0.22
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "office"
+ },
+ "potted_plant": {
+  "file": "assets/models/props/potted_plant.glb",
+  "triangles": 656,
+  "size_m": [
+   0.42,
+   0.997,
+   0.409
+  ],
+  "bbox_min": [
+   -0.21,
+   0.0,
+   -0.205
+  ],
+  "bbox_max": [
+   0.21,
+   0.997,
+   0.205
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "common"
+ },
+ "printer": {
+  "file": "assets/models/props/printer.glb",
+  "triangles": 516,
+  "size_m": [
+   0.7,
+   1.06,
+   0.598
+  ],
+  "bbox_min": [
+   -0.35,
+   0.0,
+   -0.275
+  ],
+  "bbox_max": [
+   0.35,
+   1.06,
+   0.323
+  ],
+  "meshes": [
+   "main",
+   "paper_out",
+   "status_led"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "office"
+ },
+ "filing_cabinet": {
+  "file": "assets/models/props/filing_cabinet.glb",
+  "triangles": 924,
+  "size_m": [
+   0.46,
+   1.3,
+   0.64
+  ],
+  "bbox_min": [
+   -0.23,
+   0.0,
+   -0.3
+  ],
+  "bbox_max": [
+   0.23,
+   1.3,
+   0.34
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "office"
+ },
+ "cubicle_wall": {
+  "file": "assets/models/props/cubicle_wall.glb",
+  "triangles": 204,
+  "size_m": [
+   1.64,
+   1.36,
+   0.4
+  ],
+  "bbox_min": [
+   -0.82,
+   0.0,
+   -0.2
+  ],
+  "bbox_max": [
+   0.82,
+   1.36,
+   0.2
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "Panel is 1.6m wide; tile along X to build cubicles. Both faces identical.",
+  "level": "office"
+ },
+ "coffee_mug": {
+  "file": "assets/models/props/coffee_mug.glb",
+  "triangles": 444,
+  "size_m": [
+   0.13,
+   0.1,
+   0.087
+  ],
+  "bbox_min": [
+   -0.044,
+   0.0,
+   -0.044
+  ],
+  "bbox_max": [
+   0.086,
+   0.1,
+   0.044
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "office"
+ },
+ "ceiling_light": {
+  "file": "assets/models/props/ceiling_light.glb",
+  "triangles": 24,
+  "size_m": [
+   1.2,
+   0.067,
+   0.6
+  ],
+  "bbox_min": [
+   -0.6,
+   -0.007,
+   -0.3
+  ],
+  "bbox_max": [
+   0.6,
+   0.06,
+   0.3
+  ],
+  "meshes": [
+   "main",
+   "light"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "Origin at top; hang from ceiling (light faces -Y).",
+  "level": "office"
+ },
+ "whiteboard": {
+  "file": "assets/models/props/whiteboard.glb",
+  "triangles": 372,
+  "size_m": [
+   1.8,
+   2.0,
+   0.5
+  ],
+  "bbox_min": [
+   -0.9,
+   0.0,
+   -0.27
+  ],
+  "bbox_max": [
+   0.9,
+   2.0,
+   0.23
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "office"
+ },
+ "vending_machine": {
+  "file": "assets/models/props/vending_machine.glb",
+  "triangles": 828,
+  "size_m": [
+   0.95,
+   1.85,
+   0.821
+  ],
+  "bbox_min": [
+   -0.475,
+   0.0,
+   -0.4
+  ],
+  "bbox_max": [
+   0.475,
+   1.85,
+   0.421
+  ],
+  "meshes": [
+   "main",
+   "display",
+   "sign"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "office"
+ },
+ "door": {
+  "file": "assets/models/props/door.glb",
+  "triangles": 336,
+  "size_m": [
+   1.11,
+   2.18,
+   0.187
+  ],
+  "bbox_min": [
+   -0.555,
+   0.0,
+   -0.093
+  ],
+  "bbox_max": [
+   0.555,
+   2.18,
+   0.093
+  ],
+  "meshes": [
+   "main",
+   "door"
+  ],
+  "pivots": {
+   "door": [
+    -0.475,
+    0,
+    0
+   ]
+  },
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "Node \"door\" pivots at its hinge (left edge). Rotate door.rotation.y to open.",
+  "level": "common"
+ },
+ "ac_unit": {
+  "file": "assets/models/props/ac_unit.glb",
+  "triangles": 888,
+  "size_m": [
+   1.3,
+   0.979,
+   1.011
+  ],
+  "bbox_min": [
+   -0.65,
+   -0.0,
+   -0.5
+  ],
+  "bbox_max": [
+   0.65,
+   0.979,
+   0.511
+  ],
+  "meshes": [
+   "main",
+   "fan"
+  ],
+  "pivots": {
+   "fan": [
+    0,
+    0.92,
+    0
+   ]
+  },
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "Spin node \"fan\" around Y. Good parkour step (0.9m tall).",
+  "level": "rooftops"
+ },
+ "chimney": {
+  "file": "assets/models/props/chimney.glb",
+  "triangles": 120,
+  "size_m": [
+   0.85,
+   1.535,
+   0.85
+  ],
+  "bbox_min": [
+   -0.425,
+   0.0,
+   -0.425
+  ],
+  "bbox_max": [
+   0.425,
+   1.535,
+   0.425
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "rooftops"
+ },
+ "water_tower": {
+  "file": "assets/models/props/water_tower.glb",
+  "triangles": 1392,
+  "size_m": [
+   2.8,
+   6.2,
+   2.8
+  ],
+  "bbox_min": [
+   -1.4,
+   0.0,
+   -1.4
+  ],
+  "bbox_max": [
+   1.4,
+   6.2,
+   1.4
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "rooftops"
+ },
+ "antenna": {
+  "file": "assets/models/props/antenna.glb",
+  "triangles": 348,
+  "size_m": [
+   1.0,
+   3.09,
+   0.5
+  ],
+  "bbox_min": [
+   -0.5,
+   0.0,
+   -0.25
+  ],
+  "bbox_max": [
+   0.5,
+   3.09,
+   0.25
+  ],
+  "meshes": [
+   "main",
+   "beacon"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "rooftops"
+ },
+ "skylight": {
+  "file": "assets/models/props/skylight.glb",
+  "triangles": 36,
+  "size_m": [
+   1.4,
+   0.85,
+   1.4
+  ],
+  "bbox_min": [
+   -0.7,
+   0.0,
+   -0.7
+  ],
+  "bbox_max": [
+   0.7,
+   0.85,
+   0.7
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "rooftops"
+ },
+ "vent_pipe": {
+  "file": "assets/models/props/vent_pipe.glb",
+  "triangles": 168,
+  "size_m": [
+   0.5,
+   1.0,
+   0.487
+  ],
+  "bbox_min": [
+   -0.25,
+   0.0,
+   -0.244
+  ],
+  "bbox_max": [
+   0.25,
+   1.0,
+   0.244
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "rooftops"
+ },
+ "satellite_dish": {
+  "file": "assets/models/props/satellite_dish.glb",
+  "triangles": 296,
+  "size_m": [
+   0.84,
+   1.294,
+   0.492
+  ],
+  "bbox_min": [
+   -0.42,
+   0.0,
+   -0.032
+  ],
+  "bbox_max": [
+   0.42,
+   1.294,
+   0.46
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "rooftops"
+ },
+ "rooftop_door": {
+  "file": "assets/models/props/rooftop_door.glb",
+  "triangles": 144,
+  "size_m": [
+   1.8,
+   2.62,
+   2.0
+  ],
+  "bbox_min": [
+   -0.9,
+   0.0,
+   -1.0
+  ],
+  "bbox_max": [
+   0.9,
+   2.62,
+   1.0
+  ],
+  "meshes": [
+   "main",
+   "light"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "rooftops"
+ },
+ "plank": {
+  "file": "assets/models/props/plank.glb",
+  "triangles": 48,
+  "size_m": [
+   0.52,
+   0.065,
+   3.0
+  ],
+  "bbox_min": [
+   -0.26,
+   -0.002,
+   -1.5
+  ],
+  "bbox_max": [
+   0.26,
+   0.064,
+   1.5
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "3m long along Z: bridge between rooftops (wobbles when stepped on, if you want).",
+  "level": "rooftops"
+ },
+ "crate": {
+  "file": "assets/models/props/crate.glb",
+  "triangles": 180,
+  "size_m": [
+   0.84,
+   0.84,
+   0.84
+  ],
+  "bbox_min": [
+   -0.42,
+   -0.02,
+   -0.42
+  ],
+  "bbox_max": [
+   0.42,
+   0.82,
+   0.42
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "common"
+ },
+ "clothesline": {
+  "file": "assets/models/props/clothesline.glb",
+  "triangles": 218,
+  "size_m": [
+   4.06,
+   2.0,
+   0.088
+  ],
+  "bbox_min": [
+   -2.03,
+   0.0,
+   -0.044
+  ],
+  "bbox_max": [
+   2.03,
+   2.0,
+   0.044
+  ],
+  "meshes": [
+   "main",
+   "clothes"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "rooftops"
+ },
+ "billboard": {
+  "file": "assets/models/props/billboard.glb",
+  "triangles": 240,
+  "size_m": [
+   4.4,
+   5.0,
+   0.775
+  ],
+  "bbox_min": [
+   -2.2,
+   0.0,
+   -0.175
+  ],
+  "bbox_max": [
+   2.2,
+   5.0,
+   0.6
+  ],
+  "meshes": [
+   "main",
+   "face"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "Node \"face\" is a 4.2x2.0 front panel: put a texture on it (see ui/textures/billboard_*.png).",
+  "level": "rooftops"
+ },
+ "wedding_arch": {
+  "file": "assets/models/props/wedding_arch.glb",
+  "triangles": 3536,
+  "size_m": [
+   2.3,
+   2.898,
+   0.4
+  ],
+  "bbox_min": [
+   -1.15,
+   0.0,
+   -0.2
+  ],
+  "bbox_max": [
+   1.15,
+   2.898,
+   0.2
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "Arch spans x=-1..1, top at y=2.86. The groom must be delivered here.",
+  "level": "rooftops"
+ },
+ "wedding_chair": {
+  "file": "assets/models/props/wedding_chair.glb",
+  "triangles": 612,
+  "size_m": [
+   0.44,
+   1.01,
+   0.42
+  ],
+  "bbox_min": [
+   -0.22,
+   0.0,
+   -0.21
+  ],
+  "bbox_max": [
+   0.22,
+   1.01,
+   0.21
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "rooftops"
+ },
+ "wedding_ring": {
+  "file": "assets/models/props/wedding_ring.glb",
+  "triangles": 656,
+  "size_m": [
+   0.244,
+   0.307,
+   0.09
+  ],
+  "bbox_min": [
+   -0.122,
+   -0.002,
+   -0.045
+  ],
+  "bbox_max": [
+   0.122,
+   0.305,
+   0.045
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "Oversized (~0.3m) on purpose: it is a held/pickup item. Spin it + bob it.",
+  "level": "rooftops"
+ },
+ "building_trim": {
+  "file": "assets/models/props/building_trim.glb",
+  "triangles": 24,
+  "size_m": [
+   4.0,
+   0.4,
+   0.4
+  ],
+  "bbox_min": [
+   -2.0,
+   0.0,
+   -0.18
+  ],
+  "bbox_max": [
+   2.0,
+   0.4,
+   0.22
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "4m roof-edge parapet segment. Tile around building roofs (buildings themselves = textured boxes in code).",
+  "level": "rooftops"
+ },
+ "tree_round": {
+  "file": "assets/models/props/tree_round.glb",
+  "triangles": 480,
+  "size_m": [
+   2.505,
+   3.65,
+   2.023
+  ],
+  "bbox_min": [
+   -1.205,
+   0.0,
+   -1.039
+  ],
+  "bbox_max": [
+   1.3,
+   3.65,
+   0.985
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "park"
+ },
+ "tree_pine": {
+  "file": "assets/models/props/tree_pine.glb",
+  "triangles": 210,
+  "size_m": [
+   2.134,
+   3.4,
+   2.167
+  ],
+  "bbox_min": [
+   -1.034,
+   0.0,
+   -1.083
+  ],
+  "bbox_max": [
+   1.1,
+   3.4,
+   1.083
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "park"
+ },
+ "bush": {
+  "file": "assets/models/props/bush.glb",
+  "triangles": 624,
+  "size_m": [
+   1.51,
+   0.9,
+   1.1
+  ],
+  "bbox_min": [
+   -0.76,
+   -0.1,
+   -0.45
+  ],
+  "bbox_max": [
+   0.75,
+   0.8,
+   0.65
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "park"
+ },
+ "bench": {
+  "file": "assets/models/props/bench.glb",
+  "triangles": 804,
+  "size_m": [
+   1.7,
+   0.951,
+   0.551
+  ],
+  "bbox_min": [
+   -0.85,
+   0.0,
+   -0.301
+  ],
+  "bbox_max": [
+   0.85,
+   0.951,
+   0.25
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "park"
+ },
+ "lamp_post": {
+  "file": "assets/models/props/lamp_post.glb",
+  "triangles": 228,
+  "size_m": [
+   0.48,
+   3.82,
+   0.416
+  ],
+  "bbox_min": [
+   -0.24,
+   0.0,
+   -0.208
+  ],
+  "bbox_max": [
+   0.24,
+   3.82,
+   0.208
+  ],
+  "meshes": [
+   "main",
+   "bulb"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "park"
+ },
+ "picnic_table": {
+  "file": "assets/models/props/picnic_table.glb",
+  "triangles": 192,
+  "size_m": [
+   1.8,
+   0.916,
+   1.68
+  ],
+  "bbox_min": [
+   -0.9,
+   -0.058,
+   -0.84
+  ],
+  "bbox_max": [
+   0.9,
+   0.858,
+   0.84
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "park"
+ },
+ "trash_can": {
+  "file": "assets/models/props/trash_can.glb",
+  "triangles": 532,
+  "size_m": [
+   0.62,
+   1.04,
+   0.604
+  ],
+  "bbox_min": [
+   -0.31,
+   0.0,
+   -0.302
+  ],
+  "bbox_max": [
+   0.31,
+   1.04,
+   0.302
+  ],
+  "meshes": [
+   "main",
+   "lid"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "park"
+ },
+ "fence_segment": {
+  "file": "assets/models/props/fence_segment.glb",
+  "triangles": 312,
+  "size_m": [
+   2.0,
+   1.0,
+   0.1
+  ],
+  "bbox_min": [
+   -1.0,
+   0.0,
+   -0.05
+  ],
+  "bbox_max": [
+   1.0,
+   1.0,
+   0.05
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "2m segment along X.",
+  "level": "park"
+ },
+ "rock": {
+  "file": "assets/models/props/rock.glb",
+  "triangles": 216,
+  "size_m": [
+   1.491,
+   0.917,
+   1.273
+  ],
+  "bbox_min": [
+   -0.586,
+   -0.17,
+   -0.686
+  ],
+  "bbox_max": [
+   0.905,
+   0.748,
+   0.587
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "common"
+ },
+ "sticky_note": {
+  "file": "assets/models/props/sticky_note.glb",
+  "triangles": 48,
+  "size_m": [
+   0.1,
+   0.003,
+   0.1
+  ],
+  "bbox_min": [
+   -0.05,
+   0.0,
+   -0.05
+  ],
+  "bbox_max": [
+   0.05,
+   0.003,
+   0.05
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "The \"launch codes\" (it just says password123). Real size; scale x3 for the beak.",
+  "level": "park"
+ },
+ "signpost": {
+  "file": "assets/models/props/signpost.glb",
+  "triangles": 324,
+  "size_m": [
+   1.2,
+   1.8,
+   0.13
+  ],
+  "bbox_min": [
+   -0.6,
+   0.0,
+   -0.05
+  ],
+  "bbox_max": [
+   0.6,
+   1.8,
+   0.08
+  ],
+  "meshes": [
+   "main",
+   "face"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "Node \"face\" (1.1x0.5) takes a texture e.g. ui/textures/sign_dont_feed_geese.png",
+  "level": "common"
+ },
+ "bread_loaf": {
+  "file": "assets/models/props/bread_loaf.glb",
+  "triangles": 336,
+  "size_m": [
+   0.3,
+   0.144,
+   0.14
+  ],
+  "bbox_min": [
+   -0.15,
+   0.0,
+   -0.07
+  ],
+  "bbox_max": [
+   0.15,
+   0.144,
+   0.07
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "Goose bait / throwable lure.",
+  "level": "park"
+ },
+ "sofa": {
+  "file": "assets/models/props/sofa.glb",
+  "triangles": 2256,
+  "size_m": [
+   2.05,
+   1.277,
+   0.969
+  ],
+  "bbox_min": [
+   -1.025,
+   0.0,
+   -0.519
+  ],
+  "bbox_max": [
+   1.025,
+   1.277,
+   0.45
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "grandma"
+ },
+ "armchair": {
+  "file": "assets/models/props/armchair.glb",
+  "triangles": 1512,
+  "size_m": [
+   0.96,
+   1.146,
+   0.857
+  ],
+  "bbox_min": [
+   -0.48,
+   0.15,
+   -0.432
+  ],
+  "bbox_max": [
+   0.48,
+   1.296,
+   0.425
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "grandma"
+ },
+ "crt_tv": {
+  "file": "assets/models/props/crt_tv.glb",
+  "triangles": 948,
+  "size_m": [
+   0.9,
+   1.521,
+   0.572
+  ],
+  "bbox_min": [
+   -0.45,
+   0.0,
+   -0.295
+  ],
+  "bbox_max": [
+   0.45,
+   1.521,
+   0.277
+  ],
+  "meshes": [
+   "main",
+   "screen"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "grandma"
+ },
+ "router": {
+  "file": "assets/models/props/router.glb",
+  "triangles": 462,
+  "size_m": [
+   0.28,
+   0.25,
+   0.495
+  ],
+  "bbox_min": [
+   -0.14,
+   0.0,
+   -0.401
+  ],
+  "bbox_max": [
+   0.14,
+   0.25,
+   0.095
+  ],
+  "meshes": [
+   "main",
+   "led_power",
+   "led_wifi",
+   "led_internet"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "Blink led_* nodes (swap emissive). Mission: unplug, wait 10s, plug back in. Comes with power_plug + wall_outlet.",
+  "level": "grandma"
+ },
+ "wall_outlet": {
+  "file": "assets/models/props/wall_outlet.glb",
+  "triangles": 156,
+  "size_m": [
+   0.08,
+   0.12,
+   0.015
+  ],
+  "bbox_min": [
+   -0.04,
+   0.24,
+   0.0
+  ],
+  "bbox_max": [
+   0.04,
+   0.36,
+   0.015
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "Mount on wall (face +Z). Socket centre at y=0.3.",
+  "level": "grandma"
+ },
+ "power_plug": {
+  "file": "assets/models/props/power_plug.glb",
+  "triangles": 162,
+  "size_m": [
+   0.04,
+   0.128,
+   0.172
+  ],
+  "bbox_min": [
+   -0.02,
+   -0.103,
+   -0.018
+  ],
+  "bbox_max": [
+   0.02,
+   0.025,
+   0.154
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "Prongs face -Z, origin at prong base. Interactable.",
+  "level": "grandma"
+ },
+ "bookshelf": {
+  "file": "assets/models/props/bookshelf.glb",
+  "triangles": 840,
+  "size_m": [
+   1.0,
+   1.9,
+   0.34
+  ],
+  "bbox_min": [
+   -0.5,
+   0.0,
+   -0.17
+  ],
+  "bbox_max": [
+   0.5,
+   1.9,
+   0.17
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "grandma"
+ },
+ "floor_lamp": {
+  "file": "assets/models/props/floor_lamp.glb",
+  "triangles": 400,
+  "size_m": [
+   0.5,
+   1.7,
+   0.5
+  ],
+  "bbox_min": [
+   -0.25,
+   0.0,
+   -0.25
+  ],
+  "bbox_max": [
+   0.25,
+   1.7,
+   0.25
+  ],
+  "meshes": [
+   "main",
+   "bulb"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "common"
+ },
+ "soup_bowl": {
+  "file": "assets/models/props/soup_bowl.glb",
+  "triangles": 560,
+  "size_m": [
+   0.233,
+   0.154,
+   0.217
+  ],
+  "bbox_min": [
+   -0.11,
+   0.0,
+   -0.108
+  ],
+  "bbox_max": [
+   0.123,
+   0.154,
+   0.108
+  ],
+  "meshes": [
+   "main",
+   "soup"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "grandma"
+ },
+ "side_table": {
+  "file": "assets/models/props/side_table.glb",
+  "triangles": 396,
+  "size_m": [
+   0.6,
+   0.623,
+   0.6
+  ],
+  "bbox_min": [
+   -0.3,
+   0.0,
+   -0.3
+  ],
+  "bbox_max": [
+   0.3,
+   0.623,
+   0.3
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "common"
+ },
+ "rug": {
+  "file": "assets/models/props/rug.glb",
+  "triangles": 960,
+  "size_m": [
+   2.8,
+   0.014,
+   1.96
+  ],
+  "bbox_min": [
+   -1.4,
+   0.0,
+   -0.98
+  ],
+  "bbox_max": [
+   1.4,
+   0.014,
+   0.98
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "grandma"
+ },
+ "kitchen_counter": {
+  "file": "assets/models/props/kitchen_counter.glb",
+  "triangles": 900,
+  "size_m": [
+   2.04,
+   1.195,
+   0.65
+  ],
+  "bbox_min": [
+   -1.02,
+   0.0,
+   -0.31
+  ],
+  "bbox_max": [
+   1.02,
+   1.195,
+   0.34
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "grandma"
+ },
+ "stove": {
+  "file": "assets/models/props/stove.glb",
+  "triangles": 1248,
+  "size_m": [
+   0.805,
+   1.15,
+   0.69
+  ],
+  "bbox_min": [
+   -0.425,
+   0.0,
+   -0.325
+  ],
+  "bbox_max": [
+   0.38,
+   1.15,
+   0.365
+  ],
+  "meshes": [
+   "main",
+   "soup",
+   "burner_glow"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "grandma"
+ },
+ "fridge": {
+  "file": "assets/models/props/fridge.glb",
+  "triangles": 972,
+  "size_m": [
+   0.75,
+   1.8,
+   0.78
+  ],
+  "bbox_min": [
+   -0.375,
+   0.0,
+   -0.35
+  ],
+  "bbox_max": [
+   0.375,
+   1.8,
+   0.43
+  ],
+  "meshes": [
+   "main",
+   "door_low",
+   "door_top"
+  ],
+  "pivots": {
+   "door_low": [
+    -0.37,
+    0,
+    0.37
+   ],
+   "door_top": [
+    -0.37,
+    0,
+    0.37
+   ]
+  },
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "grandma"
+ },
+ "framed_picture": {
+  "file": "assets/models/props/framed_picture.glb",
+  "triangles": 120,
+  "size_m": [
+   0.5,
+   0.6,
+   0.045
+  ],
+  "bbox_min": [
+   -0.25,
+   0.0,
+   0.0
+  ],
+  "bbox_max": [
+   0.25,
+   0.6,
+   0.045
+  ],
+  "meshes": [
+   "main",
+   "canvas"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "Wall-mounted, back at z=0. Put a texture on node \"canvas\" (ui/textures/portrait_*.png).",
+  "level": "grandma"
+ },
+ "vase_flowers": {
+  "file": "assets/models/props/vase_flowers.glb",
+  "triangles": 880,
+  "size_m": [
+   0.22,
+   0.647,
+   0.201
+  ],
+  "bbox_min": [
+   -0.11,
+   0.0,
+   -0.101
+  ],
+  "bbox_max": [
+   0.11,
+   0.647,
+   0.101
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "common"
+ },
+ "yarn_ball": {
+  "file": "assets/models/props/yarn_ball.glb",
+  "triangles": 856,
+  "size_m": [
+   0.44,
+   0.171,
+   0.192
+  ],
+  "bbox_min": [
+   -0.087,
+   -0.006,
+   -0.087
+  ],
+  "bbox_max": [
+   0.353,
+   0.166,
+   0.105
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "grandma"
+ },
+ "birthday_cake": {
+  "file": "assets/models/props/birthday_cake.glb",
+  "triangles": 4416,
+  "size_m": [
+   0.8,
+   0.57,
+   0.8
+  ],
+  "bbox_min": [
+   -0.4,
+   0.0,
+   -0.4
+  ],
+  "bbox_max": [
+   0.4,
+   0.57,
+   0.4
+  ],
+  "meshes": [
+   "main",
+   "flames"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "Flicker node \"flames\" (scale.y). The objective in L5: protect this cake.",
+  "level": "party"
+ },
+ "party_table": {
+  "file": "assets/models/props/party_table.glb",
+  "triangles": 624,
+  "size_m": [
+   1.24,
+   0.855,
+   1.24
+  ],
+  "bbox_min": [
+   -0.62,
+   0.0,
+   -0.62
+  ],
+  "bbox_max": [
+   0.62,
+   0.855,
+   0.62
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "party"
+ },
+ "gift_box": {
+  "file": "assets/models/props/gift_box.glb",
+  "triangles": 336,
+  "size_m": [
+   0.44,
+   0.454,
+   0.44
+  ],
+  "bbox_min": [
+   -0.22,
+   0.0,
+   -0.22
+  ],
+  "bbox_max": [
+   0.22,
+   0.454,
+   0.22
+  ],
+  "meshes": [
+   "wrap",
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [
+   "tint_wrap"
+  ],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "party"
+ },
+ "balloon_plain": {
+  "file": "assets/models/props/balloon_plain.glb",
+  "triangles": 456,
+  "size_m": [
+   0.36,
+   1.766,
+   0.36
+  ],
+  "bbox_min": [
+   -0.18,
+   -0.0,
+   -0.18
+  ],
+  "bbox_max": [
+   0.18,
+   1.766,
+   0.18
+  ],
+  "meshes": [
+   "balloon",
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [
+   "tint_balloon"
+  ],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "party"
+ },
+ "party_hat": {
+  "file": "assets/models/props/party_hat.glb",
+  "triangles": 636,
+  "size_m": [
+   0.16,
+   0.25,
+   0.158
+  ],
+  "bbox_min": [
+   -0.08,
+   0.0,
+   -0.079
+  ],
+  "bbox_max": [
+   0.08,
+   0.25,
+   0.079
+  ],
+  "meshes": [
+   "hat",
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [
+   "tint_hat"
+  ],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "party"
+ },
+ "cupcake": {
+  "file": "assets/models/props/cupcake.glb",
+  "triangles": 264,
+  "size_m": [
+   0.11,
+   0.154,
+   0.11
+  ],
+  "bbox_min": [
+   -0.055,
+   0.0,
+   -0.055
+  ],
+  "bbox_max": [
+   0.055,
+   0.154,
+   0.055
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "party"
+ },
+ "bouncy_castle": {
+  "file": "assets/models/props/bouncy_castle.glb",
+  "triangles": 3292,
+  "size_m": [
+   4.4,
+   3.05,
+   4.38
+  ],
+  "bbox_min": [
+   -2.2,
+   0.0,
+   -2.19
+  ],
+  "bbox_max": [
+   2.2,
+   3.05,
+   2.19
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "4x4m, open front (+Z). Players can jump in it for a super-bounce.",
+  "level": "party"
+ },
+ "bed": {
+  "file": "assets/models/props/bed.glb",
+  "triangles": 2124,
+  "size_m": [
+   1.7,
+   1.1,
+   2.17
+  ],
+  "bbox_min": [
+   -0.85,
+   0.0,
+   -1.09
+  ],
+  "bbox_max": [
+   0.85,
+   1.1,
+   1.08
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "bedroom"
+ },
+ "nightstand": {
+  "file": "assets/models/props/nightstand.glb",
+  "triangles": 168,
+  "size_m": [
+   0.5,
+   0.575,
+   0.46
+  ],
+  "bbox_min": [
+   -0.25,
+   0.0,
+   -0.21
+  ],
+  "bbox_max": [
+   0.25,
+   0.575,
+   0.25
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "bedroom"
+ },
+ "slipper": {
+  "file": "assets/models/props/slipper.glb",
+  "triangles": 588,
+  "size_m": [
+   0.112,
+   0.11,
+   0.291
+  ],
+  "bbox_min": [
+   -0.056,
+   0.0,
+   -0.14
+  ],
+  "bbox_max": [
+   0.056,
+   0.11,
+   0.151
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "bedroom"
+ },
+ "book_stack": {
+  "file": "assets/models/props/book_stack.glb",
+  "triangles": 480,
+  "size_m": [
+   0.244,
+   0.142,
+   0.186
+  ],
+  "bbox_min": [
+   -0.117,
+   0.0,
+   -0.093
+  ],
+  "bbox_max": [
+   0.127,
+   0.142,
+   0.093
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "bedroom"
+ },
+ "phone": {
+  "file": "assets/models/props/phone.glb",
+  "triangles": 120,
+  "size_m": [
+   0.075,
+   0.01,
+   0.155
+  ],
+  "bbox_min": [
+   -0.038,
+   0.0,
+   -0.077
+  ],
+  "bbox_max": [
+   0.038,
+   0.01,
+   0.077
+  ],
+  "meshes": [
+   "main",
+   "screen"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "Lying flat, screen up. Glow it with notifications (they are the boss projectiles in L6).",
+  "level": "bedroom"
+ },
+ "pillow": {
+  "file": "assets/models/props/pillow.glb",
+  "triangles": 588,
+  "size_m": [
+   0.6,
+   0.14,
+   0.4
+  ],
+  "bbox_min": [
+   -0.3,
+   0.0,
+   -0.2
+  ],
+  "bbox_max": [
+   0.3,
+   0.14,
+   0.2
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "Also the Pillow Cannon projectile (scale 0.35).",
+  "level": "bedroom"
+ },
+ "sock": {
+  "file": "assets/models/props/sock.glb",
+  "triangles": 196,
+  "size_m": [
+   0.086,
+   0.193,
+   0.263
+  ],
+  "bbox_min": [
+   -0.043,
+   -0.013,
+   -0.12
+  ],
+  "bbox_max": [
+   0.043,
+   0.18,
+   0.143
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "level": "bedroom"
+ },
+ "coffee_cup": {
+  "file": "assets/models/props/coffee_cup.glb",
+  "triangles": 196,
+  "size_m": [
+   0.096,
+   0.155,
+   0.094
+  ],
+  "bbox_min": [
+   -0.048,
+   0.0,
+   -0.047
+  ],
+  "bbox_max": [
+   0.048,
+   0.155,
+   0.047
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "Pickup: speed boost (\"DOUBLE ESPRESSO\"). Spin + bob.",
+  "level": "pickup"
+ },
+ "donut": {
+  "file": "assets/models/props/donut.glb",
+  "triangles": 912,
+  "size_m": [
+   0.212,
+   0.071,
+   0.209
+  ],
+  "bbox_min": [
+   -0.106,
+   0.002,
+   -0.104
+  ],
+  "bbox_max": [
+   0.106,
+   0.073,
+   0.104
+  ],
+  "meshes": [
+   "main"
+  ],
+  "pivots": {},
+  "tint_materials": [],
+  "markers": [],
+  "bones": [],
+  "animations": [],
+  "note": "Pickup: +1 health. Spin + bob.",
+  "level": "pickup"
+ }
+}

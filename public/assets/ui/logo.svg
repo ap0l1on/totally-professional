@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" width="900" height="360">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe066"/><stop offset="1" stop-color="#ff922b"/></linearGradient>
+    <filter id="s" x="-10%" y="-10%" width="120%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="0" flood-color="#1b1b1f"/></filter>
+  </defs>
+  <g transform="rotate(-4 450 180)" filter="url(#s)">
+    <text x="450" y="150" text-anchor="middle" font-family="Impact, 'Arial Black', sans-serif" font-size="128" fill="url(#g)" stroke="#1b1b1f" stroke-width="10" paint-order="stroke" letter-spacing="4">TOTALLY</text>
+    <text x="450" y="262" text-anchor="middle" font-family="Impact, 'Arial Black', sans-serif" font-size="112" fill="#fff" stroke="#1b1b1f" stroke-width="10" paint-order="stroke" letter-spacing="2">PROFESSIONAL</text>
+  </g>
+  <!-- agent shades -->
+  <g transform="translate(700 40) rotate(12)">
+    <path d="M0 20h150" stroke="#1b1b1f" stroke-width="10" stroke-linecap="round"/>
+    <path d="M8 18h56q4 40-30 38Q8 54 8 18Z M86 18h56q0 36-26 38-34 2-30-38Z" fill="#1b1b1f"/>
+    <path d="M20 26l10 0M98 26l10 0" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(450 320) rotate(-4)">
+    <rect x="-230" y="-30" width="460" height="52" rx="26" fill="#ff4f6d" stroke="#1b1b1f" stroke-width="6"/>
+    <text x="0" y="8" text-anchor="middle" font-family="'Arial Black', Arial, sans-serif" font-size="26" fill="#fff">MISSIONS NOBODY ASKED FOR</text>
+  </g>
+</svg>

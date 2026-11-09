@@ -1,0 +1,4061 @@
+{
+ "conventions": {
+  "units": "metres",
+  "up": "+Y",
+  "forward": "models face +Z (rotate PI to face -Z)",
+  "origin": "base centre at y=0 unless noted",
+  "weapons": "origin = right-hand grip, barrel points -Z, marker \"muzzle\" = projectile spawn, marker \"grip_L\" = support hand",
+  "materials": "vertex-coloured MeshStandardMaterial; materials named tint_<group> are single-colour and can be recoloured (clone material, set vertexColors=false, color.set(hex))",
+  "accessories": "meshes/groups named acc_* are optional accessories: toggle visibility of the WHOLE subtree (multi-material accessories load as a Group \"acc_x\" with child meshes)",
+  "skinned": "characters are rigidly skinned; clone with SkeletonUtils.clone(); animations included in each .glb"
+ },
+ "models": {
+  "characters": {
+   "office_worker": {
+    "file": "assets/models/characters/office_worker.glb",
+    "triangles": 10552,
+    "size_m": [
+     0.58,
+     2.015,
+     0.332
+    ],
+    "bbox_min": [
+     -0.29,
+     0.0,
+     -0.147
+    ],
+    "bbox_max": [
+     0.29,
+     2.015,
+     0.185
+    ],
+    "meshes": [
+     "pants",
+     "shirt",
+     "skin",
+     "body",
+     "hair",
+     "acc_combover",
+     "acc_mustache",
+     "acc_mustache_crooked",
+     "acc_glasses",
+     "acc_tie",
+     "acc_tie_stain",
+     "acc_watch_L",
+     "acc_watch_R",
+     "acc_pen_ear",
+     "acc_lanyard",
+     "acc_party_hat",
+     "acc_mug"
+    ],
+    "pivots": {},
+    "tint_materials": [
+     "tint_pants",
+     "tint_shirt",
+     "tint_skin",
+     "tint_hair"
+    ],
+    "markers": [
+     "socket_hand_L",
+     "socket_hand_R",
+     "socket_head_top",
+     "socket_chest",
+     "socket_back"
+    ],
+    "bones": [
+     "hips",
+     "spine",
+     "chest",
+     "neck",
+     "head",
+     "upperarm_L",
+     "forearm_L",
+     "hand_L",
+     "upperarm_R",
+     "forearm_R",
+     "hand_R",
+     "thigh_L",
+     "shin_L",
+     "foot_L",
+     "thigh_R",
+     "shin_R",
+     "foot_R"
+    ],
+    "animations": [
+     {
+      "name": "Walk",
+      "duration": 1.0,
+      "loop": true
+     },
+     {
+      "name": "Run",
+      "duration": 0.6,
+      "loop": true
+     },
+     {
+      "name": "RunLookBack",
+      "duration": 0.6,
+      "loop": true
+     },
+     {
+      "name": "Panic",
+      "duration": 0.5,
+      "loop": true
+     },
+     {
+      "name": "Idle",
+      "duration": 4.0,
+      "loop": true
+     },
+     {
+      "name": "Hum",
+      "duration": 2.0,
+      "loop": true
+     },
+     {
+      "name": "Talk",
+      "duration": 2.4,
+      "loop": true
+     },
+     {
+      "name": "Fall",
+      "duration": 1.0,
+      "loop": false
+     },
+     {
+      "name": "Sleep",
+      "duration": 3.0,
+      "loop": true
+     },
+     {
+      "name": "Wave",
+      "duration": 1.2,
+      "loop": true
+     },
+     {
+      "name": "Celebrate",
+      "duration": 0.8,
+      "loop": true
+     },
+     {
+      "name": "Jump",
+      "duration": 0.7,
+      "loop": false
+     },
+     {
+      "name": "SitTyping",
+      "duration": 1.0,
+      "loop": true
+     },
+     {
+      "name": "Sip",
+      "duration": 4.0,
+      "loop": true
+     },
+     {
+      "name": "Stir",
+      "duration": 1.4,
+      "loop": true
+     },
+     {
+      "name": "Point",
+      "duration": 0.6,
+      "loop": false
+     }
+    ],
+    "hipsY": 0.95,
+    "usage": "Gary costume = show acc_combover+acc_mustache(_crooked)+acc_glasses+acc_tie+acc_lanyard, hide hair. Tells: acc_mustache (real) vs acc_mustache_crooked (fake), acc_tie_stain, acc_watch_R vs acc_watch_L, acc_pen_ear, acc_mug."
+   },
+   "groom": {
+    "file": "assets/models/characters/groom.glb",
+    "triangles": 7132,
+    "size_m": [
+     0.579,
+     1.92,
+     0.343
+    ],
+    "bbox_min": [
+     -0.289,
+     0.0,
+     -0.158
+    ],
+    "bbox_max": [
+     0.289,
+     1.92,
+     0.185
+    ],
+    "meshes": [
+     "pants",
+     "shirt",
+     "skin",
+     "body",
+     "hair",
+     "acc_sweat"
+    ],
+    "pivots": {},
+    "tint_materials": [
+     "tint_pants",
+     "tint_shirt",
+     "tint_skin",
+     "tint_hair"
+    ],
+    "markers": [
+     "socket_hand_L",
+     "socket_hand_R",
+     "socket_head_top",
+     "socket_chest",
+     "socket_back"
+    ],
+    "bones": [
+     "hips",
+     "spine",
+     "chest",
+     "neck",
+     "head",
+     "upperarm_L",
+     "forearm_L",
+     "hand_L",
+     "upperarm_R",
+     "forearm_R",
+     "hand_R",
+     "thigh_L",
+     "shin_L",
+     "foot_L",
+     "thigh_R",
+     "shin_R",
+     "foot_R"
+    ],
+    "animations": [
+     {
+      "name": "Walk",
+      "duration": 1.0,
+      "loop": true
+     },
+     {
+      "name": "Run",
+      "duration": 0.6,
+      "loop": true
+     },
+     {
+      "name": "RunLookBack",
+      "duration": 0.6,
+      "loop": true
+     },
+     {
+      "name": "Panic",
+      "duration": 0.5,
+      "loop": true
+     },
+     {
+      "name": "Idle",
+      "duration": 4.0,
+      "loop": true
+     },
+     {
+      "name": "Hum",
+      "duration": 2.0,
+      "loop": true
+     },
+     {
+      "name": "Talk",
+      "duration": 2.4,
+      "loop": true
+     },
+     {
+      "name": "Fall",
+      "duration": 1.0,
+      "loop": false
+     },
+     {
+      "name": "Sleep",
+      "duration": 3.0,
+      "loop": true
+     },
+     {
+      "name": "Wave",
+      "duration": 1.2,
+      "loop": true
+     },
+     {
+      "name": "Celebrate",
+      "duration": 0.8,
+      "loop": true
+     },
+     {
+      "name": "Jump",
+      "duration": 0.7,
+      "loop": false
+     },
+     {
+      "name": "SitTyping",
+      "duration": 1.0,
+      "loop": true
+     },
+     {
+      "name": "Sip",
+      "duration": 4.0,
+      "loop": true
+     },
+     {
+      "name": "Stir",
+      "duration": 1.4,
+      "loop": true
+     },
+     {
+      "name": "Point",
+      "duration": 0.6,
+      "loop": false
+     }
+    ],
+    "hipsY": 0.978
+   },
+   "bride": {
+    "file": "assets/models/characters/bride.glb",
+    "triangles": 7728,
+    "size_m": [
+     1.0,
+     1.795,
+     1.0
+    ],
+    "bbox_min": [
+     -0.5,
+     0.0,
+     -0.5
+    ],
+    "bbox_max": [
+     0.5,
+     1.795,
+     0.5
+    ],
+    "meshes": [
+     "pants",
+     "shirt",
+     "skin",
+     "body",
+     "hair",
+     "acc_veil",
+     "acc_bouquet"
+    ],
+    "pivots": {},
+    "tint_materials": [
+     "tint_pants",
+     "tint_shirt",
+     "tint_skin",
+     "tint_hair"
+    ],
+    "markers": [
+     "socket_hand_L",
+     "socket_hand_R",
+     "socket_head_top",
+     "socket_chest",
+     "socket_back"
+    ],
+    "bones": [
+     "hips",
+     "spine",
+     "chest",
+     "neck",
+     "head",
+     "upperarm_L",
+     "forearm_L",
+     "hand_L",
+     "upperarm_R",
+     "forearm_R",
+     "hand_R",
+     "thigh_L",
+     "shin_L",
+     "foot_L",
+     "thigh_R",
+     "shin_R",
+     "foot_R"
+    ],
+    "animations": [
+     {
+      "name": "Walk",
+      "duration": 1.0,
+      "loop": true
+     },
+     {
+      "name": "Run",
+      "duration": 0.6,
+      "loop": true
+     },
+     {
+      "name": "RunLookBack",
+      "duration": 0.6,
+      "loop": true
+     },
+     {
+      "name": "Panic",
+      "duration": 0.5,
+      "loop": true
+     },
+     {
+      "name": "Idle",
+      "duration": 4.0,
+      "loop": true
+     },
+     {
+      "name": "Hum",
+      "duration": 2.0,
+      "loop": true
+     },
+     {
+      "name": "Talk",
+      "duration": 2.4,
+      "loop": true
+     },
+     {
+      "name": "Fall",
+      "duration": 1.0,
+      "loop": false
+     },
+     {
+      "name": "Sleep",
+      "duration": 3.0,
+      "loop": true
+     },
+     {
+      "name": "Wave",
+      "duration": 1.2,
+      "loop": true
+     },
+     {
+      "name": "Celebrate",
+      "duration": 0.8,
+      "loop": true
+     },
+     {
+      "name": "Jump",
+      "duration": 0.7,
+      "loop": false
+     },
+     {
+      "name": "SitTyping",
+      "duration": 1.0,
+      "loop": true
+     },
+     {
+      "name": "Sip",
+      "duration": 4.0,
+      "loop": true
+     },
+     {
+      "name": "Stir",
+      "duration": 1.4,
+      "loop": true
+     },
+     {
+      "name": "Point",
+      "duration": 0.6,
+      "loop": false
+     }
+    ],
+    "hipsY": 0.921
+   },
+   "grandma": {
+    "file": "assets/models/characters/grandma.glb",
+    "triangles": 8500,
+    "size_m": [
+     0.6,
+     1.703,
+     0.6
+    ],
+    "bbox_min": [
+     -0.3,
+     0.0,
+     -0.3
+    ],
+    "bbox_max": [
+     0.3,
+     1.703,
+     0.3
+    ],
+    "meshes": [
+     "pants",
+     "shirt",
+     "skin",
+     "body",
+     "hair",
+     "acc_glasses",
+     "acc_apron",
+     "acc_ladle"
+    ],
+    "pivots": {},
+    "tint_materials": [
+     "tint_pants",
+     "tint_shirt",
+     "tint_skin",
+     "tint_hair"
+    ],
+    "markers": [
+     "socket_hand_L",
+     "socket_hand_R",
+     "socket_head_top",
+     "socket_chest",
+     "socket_back"
+    ],
+    "bones": [
+     "hips",
+     "spine",
+     "chest",
+     "neck",
+     "head",
+     "upperarm_L",
+     "forearm_L",
+     "hand_L",
+     "upperarm_R",
+     "forearm_R",
+     "hand_R",
+     "thigh_L",
+     "shin_L",
+     "foot_L",
+     "thigh_R",
+     "shin_R",
+     "foot_R"
+    ],
+    "animations": [
+     {
+      "name": "Walk",
+      "duration": 1.0,
+      "loop": true
+     },
+     {
+      "name": "Run",
+      "duration": 0.6,
+      "loop": true
+     },
+     {
+      "name": "RunLookBack",
+      "duration": 0.6,
+      "loop": true
+     },
+     {
+      "name": "Panic",
+      "duration": 0.5,
+      "loop": true
+     },
+     {
+      "name": "Idle",
+      "duration": 4.0,
+      "loop": true
+     },
+     {
+      "name": "Hum",
+      "duration": 2.0,
+      "loop": true
+     },
+     {
+      "name": "Talk",
+      "duration": 2.4,
+      "loop": true
+     },
+     {
+      "name": "Fall",
+      "duration": 1.0,
+      "loop": false
+     },
+     {
+      "name": "Sleep",
+      "duration": 3.0,
+      "loop": true
+     },
+     {
+      "name": "Wave",
+      "duration": 1.2,
+      "loop": true
+     },
+     {
+      "name": "Celebrate",
+      "duration": 0.8,
+      "loop": true
+     },
+     {
+      "name": "Jump",
+      "duration": 0.7,
+      "loop": false
+     },
+     {
+      "name": "SitTyping",
+      "duration": 1.0,
+      "loop": true
+     },
+     {
+      "name": "Sip",
+      "duration": 4.0,
+      "loop": true
+     },
+     {
+      "name": "Stir",
+      "duration": 1.4,
+      "loop": true
+     },
+     {
+      "name": "Point",
+      "duration": 0.6,
+      "loop": false
+     }
+    ],
+    "hipsY": 0.855
+   },
+   "goose": {
+    "file": "assets/models/characters/goose.glb",
+    "triangles": 1976,
+    "size_m": [
+     0.98,
+     0.872,
+     0.811
+    ],
+    "bbox_min": [
+     -0.49,
+     0.004,
+     -0.421
+    ],
+    "bbox_max": [
+     0.49,
+     0.877,
+     0.391
+    ],
+    "meshes": [
+     "body"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [
+     "socket_beak"
+    ],
+    "bones": [
+     "body",
+     "neck1",
+     "neck2",
+     "head",
+     "jaw",
+     "wing_L",
+     "wing_R",
+     "leg_L",
+     "leg_R"
+    ],
+    "animations": [
+     {
+      "name": "Idle",
+      "duration": 3.0,
+      "loop": true
+     },
+     {
+      "name": "Walk",
+      "duration": 0.5,
+      "loop": true
+     },
+     {
+      "name": "Honk",
+      "duration": 0.7,
+      "loop": false
+     },
+     {
+      "name": "Charge",
+      "duration": 0.36,
+      "loop": true
+     },
+     {
+      "name": "Flap",
+      "duration": 0.5,
+      "loop": true
+     },
+     {
+      "name": "Netted",
+      "duration": 0.6,
+      "loop": true
+     },
+     {
+      "name": "Stunned",
+      "duration": 2.0,
+      "loop": true
+     }
+    ]
+   },
+   "cat": {
+    "file": "assets/models/characters/cat.glb",
+    "triangles": 2956,
+    "size_m": [
+     0.19,
+     0.562,
+     0.604
+    ],
+    "bbox_min": [
+     -0.095,
+     -0.0,
+     -0.282
+    ],
+    "bbox_max": [
+     0.095,
+     0.561,
+     0.322
+    ],
+    "meshes": [
+     "body"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [
+     "socket_mouth"
+    ],
+    "bones": [
+     "body",
+     "head",
+     "tail1",
+     "tail2",
+     "leg_FL",
+     "leg_FR",
+     "leg_BL",
+     "leg_BR"
+    ],
+    "animations": [
+     {
+      "name": "Idle",
+      "duration": 3.0,
+      "loop": true
+     },
+     {
+      "name": "Walk",
+      "duration": 0.6,
+      "loop": true
+     },
+     {
+      "name": "Swat",
+      "duration": 0.6,
+      "loop": false
+     },
+     {
+      "name": "Startled",
+      "duration": 0.5,
+      "loop": false
+     }
+    ]
+   },
+   "balloon_dog": {
+    "file": "assets/models/characters/balloon_dog.glb",
+    "triangles": 5024,
+    "size_m": [
+     0.299,
+     0.715,
+     0.799
+    ],
+    "bbox_min": [
+     -0.15,
+     -0.005,
+     -0.326
+    ],
+    "bbox_max": [
+     0.15,
+     0.71,
+     0.474
+    ],
+    "meshes": [
+     "balloon",
+     "face"
+    ],
+    "pivots": {},
+    "tint_materials": [
+     "tint_balloon"
+    ],
+    "markers": [],
+    "bones": [
+     "root",
+     "body",
+     "head",
+     "tail"
+    ],
+    "animations": [
+     {
+      "name": "Idle",
+      "duration": 1.6,
+      "loop": true
+     },
+     {
+      "name": "Hop",
+      "duration": 0.5,
+      "loop": true
+     },
+     {
+      "name": "Bite",
+      "duration": 0.5,
+      "loop": false
+     },
+     {
+      "name": "Pop",
+      "duration": 0.25,
+      "loop": false
+     }
+    ]
+   },
+   "balloon_giraffe": {
+    "file": "assets/models/characters/balloon_giraffe.glb",
+    "triangles": 5228,
+    "size_m": [
+     1.044,
+     4.27,
+     2.358
+    ],
+    "bbox_min": [
+     -0.522,
+     0.0,
+     -0.794
+    ],
+    "bbox_max": [
+     0.522,
+     4.27,
+     1.564
+    ],
+    "meshes": [
+     "balloon",
+     "face",
+     "spots"
+    ],
+    "pivots": {},
+    "tint_materials": [
+     "tint_balloon"
+    ],
+    "markers": [
+     "weakpoint_head"
+    ],
+    "bones": [
+     "root",
+     "body",
+     "neck",
+     "head",
+     "leg_FL",
+     "leg_FR",
+     "leg_BL",
+     "leg_BR"
+    ],
+    "animations": [
+     {
+      "name": "Idle",
+      "duration": 2.4,
+      "loop": true
+     },
+     {
+      "name": "Walk",
+      "duration": 1.2,
+      "loop": true
+     },
+     {
+      "name": "Stomp",
+      "duration": 1.2,
+      "loop": false
+     },
+     {
+      "name": "Hurt",
+      "duration": 0.5,
+      "loop": false
+     },
+     {
+      "name": "Pop",
+      "duration": 0.3,
+      "loop": false
+     }
+    ]
+   },
+   "alarm_clock_boss": {
+    "file": "assets/models/characters/alarm_clock_boss.glb",
+    "triangles": 5372,
+    "size_m": [
+     2.68,
+     2.688,
+     0.889
+    ],
+    "bbox_min": [
+     -1.34,
+     -0.008,
+     -0.51
+    ],
+    "bbox_max": [
+     1.34,
+     2.68,
+     0.379
+    ],
+    "meshes": [
+     "body",
+     "face",
+     "snooze"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [
+     "weakpoint_snooze"
+    ],
+    "bones": [
+     "root",
+     "body",
+     "bell_L",
+     "bell_R",
+     "hammer",
+     "hand_hour",
+     "hand_minute",
+     "leg_L",
+     "leg_R",
+     "arm_L",
+     "arm_R"
+    ],
+    "animations": [
+     {
+      "name": "Idle",
+      "duration": 2.0,
+      "loop": true
+     },
+     {
+      "name": "Ring",
+      "duration": 0.4,
+      "loop": true
+     },
+     {
+      "name": "Hop",
+      "duration": 0.9,
+      "loop": false
+     },
+     {
+      "name": "Charge",
+      "duration": 0.4,
+      "loop": true
+     },
+     {
+      "name": "Stunned",
+      "duration": 1.5,
+      "loop": true
+     },
+     {
+      "name": "Defeated",
+      "duration": 1.6,
+      "loop": false
+     }
+    ]
+   }
+  },
+  "props": {
+   "desk_setup": {
+    "file": "assets/models/props/desk_setup.glb",
+    "triangles": 972,
+    "size_m": [
+     1.4,
+     1.29,
+     0.72
+    ],
+    "bbox_min": [
+     -0.7,
+     0.0,
+     -0.36
+    ],
+    "bbox_max": [
+     0.7,
+     1.29,
+     0.36
+    ],
+    "meshes": [
+     "main",
+     "screen"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "office"
+   },
+   "office_chair": {
+    "file": "assets/models/props/office_chair.glb",
+    "triangles": 1452,
+    "size_m": [
+     0.612,
+     1.118,
+     0.631
+    ],
+    "bbox_min": [
+     -0.306,
+     0.0,
+     -0.311
+    ],
+    "bbox_max": [
+     0.306,
+     1.118,
+     0.32
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "office"
+   },
+   "water_cooler": {
+    "file": "assets/models/props/water_cooler.glb",
+    "triangles": 648,
+    "size_m": [
+     0.32,
+     1.44,
+     0.38
+    ],
+    "bbox_min": [
+     -0.16,
+     0.0,
+     -0.16
+    ],
+    "bbox_max": [
+     0.16,
+     1.44,
+     0.22
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "office"
+   },
+   "potted_plant": {
+    "file": "assets/models/props/potted_plant.glb",
+    "triangles": 656,
+    "size_m": [
+     0.42,
+     0.997,
+     0.409
+    ],
+    "bbox_min": [
+     -0.21,
+     0.0,
+     -0.205
+    ],
+    "bbox_max": [
+     0.21,
+     0.997,
+     0.205
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "common"
+   },
+   "printer": {
+    "file": "assets/models/props/printer.glb",
+    "triangles": 516,
+    "size_m": [
+     0.7,
+     1.06,
+     0.598
+    ],
+    "bbox_min": [
+     -0.35,
+     0.0,
+     -0.275
+    ],
+    "bbox_max": [
+     0.35,
+     1.06,
+     0.323
+    ],
+    "meshes": [
+     "main",
+     "paper_out",
+     "status_led"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "office"
+   },
+   "filing_cabinet": {
+    "file": "assets/models/props/filing_cabinet.glb",
+    "triangles": 924,
+    "size_m": [
+     0.46,
+     1.3,
+     0.64
+    ],
+    "bbox_min": [
+     -0.23,
+     0.0,
+     -0.3
+    ],
+    "bbox_max": [
+     0.23,
+     1.3,
+     0.34
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "office"
+   },
+   "cubicle_wall": {
+    "file": "assets/models/props/cubicle_wall.glb",
+    "triangles": 204,
+    "size_m": [
+     1.64,
+     1.36,
+     0.4
+    ],
+    "bbox_min": [
+     -0.82,
+     0.0,
+     -0.2
+    ],
+    "bbox_max": [
+     0.82,
+     1.36,
+     0.2
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "Panel is 1.6m wide; tile along X to build cubicles. Both faces identical.",
+    "level": "office"
+   },
+   "coffee_mug": {
+    "file": "assets/models/props/coffee_mug.glb",
+    "triangles": 444,
+    "size_m": [
+     0.13,
+     0.1,
+     0.087
+    ],
+    "bbox_min": [
+     -0.044,
+     0.0,
+     -0.044
+    ],
+    "bbox_max": [
+     0.086,
+     0.1,
+     0.044
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "office"
+   },
+   "ceiling_light": {
+    "file": "assets/models/props/ceiling_light.glb",
+    "triangles": 24,
+    "size_m": [
+     1.2,
+     0.067,
+     0.6
+    ],
+    "bbox_min": [
+     -0.6,
+     -0.007,
+     -0.3
+    ],
+    "bbox_max": [
+     0.6,
+     0.06,
+     0.3
+    ],
+    "meshes": [
+     "main",
+     "light"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "Origin at top; hang from ceiling (light faces -Y).",
+    "level": "office"
+   },
+   "whiteboard": {
+    "file": "assets/models/props/whiteboard.glb",
+    "triangles": 372,
+    "size_m": [
+     1.8,
+     2.0,
+     0.5
+    ],
+    "bbox_min": [
+     -0.9,
+     0.0,
+     -0.27
+    ],
+    "bbox_max": [
+     0.9,
+     2.0,
+     0.23
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "office"
+   },
+   "vending_machine": {
+    "file": "assets/models/props/vending_machine.glb",
+    "triangles": 828,
+    "size_m": [
+     0.95,
+     1.85,
+     0.821
+    ],
+    "bbox_min": [
+     -0.475,
+     0.0,
+     -0.4
+    ],
+    "bbox_max": [
+     0.475,
+     1.85,
+     0.421
+    ],
+    "meshes": [
+     "main",
+     "display",
+     "sign"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "office"
+   },
+   "door": {
+    "file": "assets/models/props/door.glb",
+    "triangles": 336,
+    "size_m": [
+     1.11,
+     2.18,
+     0.187
+    ],
+    "bbox_min": [
+     -0.555,
+     0.0,
+     -0.093
+    ],
+    "bbox_max": [
+     0.555,
+     2.18,
+     0.093
+    ],
+    "meshes": [
+     "main",
+     "door"
+    ],
+    "pivots": {
+     "door": [
+      -0.475,
+      0,
+      0
+     ]
+    },
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "Node \"door\" pivots at its hinge (left edge). Rotate door.rotation.y to open.",
+    "level": "common"
+   },
+   "ac_unit": {
+    "file": "assets/models/props/ac_unit.glb",
+    "triangles": 888,
+    "size_m": [
+     1.3,
+     0.979,
+     1.011
+    ],
+    "bbox_min": [
+     -0.65,
+     -0.0,
+     -0.5
+    ],
+    "bbox_max": [
+     0.65,
+     0.979,
+     0.511
+    ],
+    "meshes": [
+     "main",
+     "fan"
+    ],
+    "pivots": {
+     "fan": [
+      0,
+      0.92,
+      0
+     ]
+    },
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "Spin node \"fan\" around Y. Good parkour step (0.9m tall).",
+    "level": "rooftops"
+   },
+   "chimney": {
+    "file": "assets/models/props/chimney.glb",
+    "triangles": 120,
+    "size_m": [
+     0.85,
+     1.535,
+     0.85
+    ],
+    "bbox_min": [
+     -0.425,
+     0.0,
+     -0.425
+    ],
+    "bbox_max": [
+     0.425,
+     1.535,
+     0.425
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "rooftops"
+   },
+   "water_tower": {
+    "file": "assets/models/props/water_tower.glb",
+    "triangles": 1392,
+    "size_m": [
+     2.8,
+     6.2,
+     2.8
+    ],
+    "bbox_min": [
+     -1.4,
+     0.0,
+     -1.4
+    ],
+    "bbox_max": [
+     1.4,
+     6.2,
+     1.4
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "rooftops"
+   },
+   "antenna": {
+    "file": "assets/models/props/antenna.glb",
+    "triangles": 348,
+    "size_m": [
+     1.0,
+     3.09,
+     0.5
+    ],
+    "bbox_min": [
+     -0.5,
+     0.0,
+     -0.25
+    ],
+    "bbox_max": [
+     0.5,
+     3.09,
+     0.25
+    ],
+    "meshes": [
+     "main",
+     "beacon"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "rooftops"
+   },
+   "skylight": {
+    "file": "assets/models/props/skylight.glb",
+    "triangles": 36,
+    "size_m": [
+     1.4,
+     0.85,
+     1.4
+    ],
+    "bbox_min": [
+     -0.7,
+     0.0,
+     -0.7
+    ],
+    "bbox_max": [
+     0.7,
+     0.85,
+     0.7
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "rooftops"
+   },
+   "vent_pipe": {
+    "file": "assets/models/props/vent_pipe.glb",
+    "triangles": 168,
+    "size_m": [
+     0.5,
+     1.0,
+     0.487
+    ],
+    "bbox_min": [
+     -0.25,
+     0.0,
+     -0.244
+    ],
+    "bbox_max": [
+     0.25,
+     1.0,
+     0.244
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "rooftops"
+   },
+   "satellite_dish": {
+    "file": "assets/models/props/satellite_dish.glb",
+    "triangles": 296,
+    "size_m": [
+     0.84,
+     1.294,
+     0.492
+    ],
+    "bbox_min": [
+     -0.42,
+     0.0,
+     -0.032
+    ],
+    "bbox_max": [
+     0.42,
+     1.294,
+     0.46
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "rooftops"
+   },
+   "rooftop_door": {
+    "file": "assets/models/props/rooftop_door.glb",
+    "triangles": 144,
+    "size_m": [
+     1.8,
+     2.62,
+     2.0
+    ],
+    "bbox_min": [
+     -0.9,
+     0.0,
+     -1.0
+    ],
+    "bbox_max": [
+     0.9,
+     2.62,
+     1.0
+    ],
+    "meshes": [
+     "main",
+     "light"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "rooftops"
+   },
+   "plank": {
+    "file": "assets/models/props/plank.glb",
+    "triangles": 48,
+    "size_m": [
+     0.52,
+     0.065,
+     3.0
+    ],
+    "bbox_min": [
+     -0.26,
+     -0.002,
+     -1.5
+    ],
+    "bbox_max": [
+     0.26,
+     0.064,
+     1.5
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "3m long along Z: bridge between rooftops (wobbles when stepped on, if you want).",
+    "level": "rooftops"
+   },
+   "crate": {
+    "file": "assets/models/props/crate.glb",
+    "triangles": 180,
+    "size_m": [
+     0.84,
+     0.84,
+     0.84
+    ],
+    "bbox_min": [
+     -0.42,
+     -0.02,
+     -0.42
+    ],
+    "bbox_max": [
+     0.42,
+     0.82,
+     0.42
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "common"
+   },
+   "clothesline": {
+    "file": "assets/models/props/clothesline.glb",
+    "triangles": 218,
+    "size_m": [
+     4.06,
+     2.0,
+     0.088
+    ],
+    "bbox_min": [
+     -2.03,
+     0.0,
+     -0.044
+    ],
+    "bbox_max": [
+     2.03,
+     2.0,
+     0.044
+    ],
+    "meshes": [
+     "main",
+     "clothes"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "rooftops"
+   },
+   "billboard": {
+    "file": "assets/models/props/billboard.glb",
+    "triangles": 240,
+    "size_m": [
+     4.4,
+     5.0,
+     0.775
+    ],
+    "bbox_min": [
+     -2.2,
+     0.0,
+     -0.175
+    ],
+    "bbox_max": [
+     2.2,
+     5.0,
+     0.6
+    ],
+    "meshes": [
+     "main",
+     "face"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "Node \"face\" is a 4.2x2.0 front panel: put a texture on it (see ui/textures/billboard_*.png).",
+    "level": "rooftops"
+   },
+   "wedding_arch": {
+    "file": "assets/models/props/wedding_arch.glb",
+    "triangles": 3536,
+    "size_m": [
+     2.3,
+     2.898,
+     0.4
+    ],
+    "bbox_min": [
+     -1.15,
+     0.0,
+     -0.2
+    ],
+    "bbox_max": [
+     1.15,
+     2.898,
+     0.2
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "Arch spans x=-1..1, top at y=2.86. The groom must be delivered here.",
+    "level": "rooftops"
+   },
+   "wedding_chair": {
+    "file": "assets/models/props/wedding_chair.glb",
+    "triangles": 612,
+    "size_m": [
+     0.44,
+     1.01,
+     0.42
+    ],
+    "bbox_min": [
+     -0.22,
+     0.0,
+     -0.21
+    ],
+    "bbox_max": [
+     0.22,
+     1.01,
+     0.21
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "rooftops"
+   },
+   "wedding_ring": {
+    "file": "assets/models/props/wedding_ring.glb",
+    "triangles": 656,
+    "size_m": [
+     0.244,
+     0.307,
+     0.09
+    ],
+    "bbox_min": [
+     -0.122,
+     -0.002,
+     -0.045
+    ],
+    "bbox_max": [
+     0.122,
+     0.305,
+     0.045
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "Oversized (~0.3m) on purpose: it is a held/pickup item. Spin it + bob it.",
+    "level": "rooftops"
+   },
+   "building_trim": {
+    "file": "assets/models/props/building_trim.glb",
+    "triangles": 24,
+    "size_m": [
+     4.0,
+     0.4,
+     0.4
+    ],
+    "bbox_min": [
+     -2.0,
+     0.0,
+     -0.18
+    ],
+    "bbox_max": [
+     2.0,
+     0.4,
+     0.22
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "4m roof-edge parapet segment. Tile around building roofs (buildings themselves = textured boxes in code).",
+    "level": "rooftops"
+   },
+   "tree_round": {
+    "file": "assets/models/props/tree_round.glb",
+    "triangles": 480,
+    "size_m": [
+     2.505,
+     3.65,
+     2.023
+    ],
+    "bbox_min": [
+     -1.205,
+     0.0,
+     -1.039
+    ],
+    "bbox_max": [
+     1.3,
+     3.65,
+     0.985
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "park"
+   },
+   "tree_pine": {
+    "file": "assets/models/props/tree_pine.glb",
+    "triangles": 210,
+    "size_m": [
+     2.134,
+     3.4,
+     2.167
+    ],
+    "bbox_min": [
+     -1.034,
+     0.0,
+     -1.083
+    ],
+    "bbox_max": [
+     1.1,
+     3.4,
+     1.083
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "park"
+   },
+   "bush": {
+    "file": "assets/models/props/bush.glb",
+    "triangles": 624,
+    "size_m": [
+     1.51,
+     0.9,
+     1.1
+    ],
+    "bbox_min": [
+     -0.76,
+     -0.1,
+     -0.45
+    ],
+    "bbox_max": [
+     0.75,
+     0.8,
+     0.65
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "park"
+   },
+   "bench": {
+    "file": "assets/models/props/bench.glb",
+    "triangles": 804,
+    "size_m": [
+     1.7,
+     0.951,
+     0.551
+    ],
+    "bbox_min": [
+     -0.85,
+     0.0,
+     -0.301
+    ],
+    "bbox_max": [
+     0.85,
+     0.951,
+     0.25
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "park"
+   },
+   "lamp_post": {
+    "file": "assets/models/props/lamp_post.glb",
+    "triangles": 228,
+    "size_m": [
+     0.48,
+     3.82,
+     0.416
+    ],
+    "bbox_min": [
+     -0.24,
+     0.0,
+     -0.208
+    ],
+    "bbox_max": [
+     0.24,
+     3.82,
+     0.208
+    ],
+    "meshes": [
+     "main",
+     "bulb"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "park"
+   },
+   "picnic_table": {
+    "file": "assets/models/props/picnic_table.glb",
+    "triangles": 192,
+    "size_m": [
+     1.8,
+     0.916,
+     1.68
+    ],
+    "bbox_min": [
+     -0.9,
+     -0.058,
+     -0.84
+    ],
+    "bbox_max": [
+     0.9,
+     0.858,
+     0.84
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "park"
+   },
+   "trash_can": {
+    "file": "assets/models/props/trash_can.glb",
+    "triangles": 532,
+    "size_m": [
+     0.62,
+     1.04,
+     0.604
+    ],
+    "bbox_min": [
+     -0.31,
+     0.0,
+     -0.302
+    ],
+    "bbox_max": [
+     0.31,
+     1.04,
+     0.302
+    ],
+    "meshes": [
+     "main",
+     "lid"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "park"
+   },
+   "fence_segment": {
+    "file": "assets/models/props/fence_segment.glb",
+    "triangles": 312,
+    "size_m": [
+     2.0,
+     1.0,
+     0.1
+    ],
+    "bbox_min": [
+     -1.0,
+     0.0,
+     -0.05
+    ],
+    "bbox_max": [
+     1.0,
+     1.0,
+     0.05
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "2m segment along X.",
+    "level": "park"
+   },
+   "rock": {
+    "file": "assets/models/props/rock.glb",
+    "triangles": 216,
+    "size_m": [
+     1.491,
+     0.917,
+     1.273
+    ],
+    "bbox_min": [
+     -0.586,
+     -0.17,
+     -0.686
+    ],
+    "bbox_max": [
+     0.905,
+     0.748,
+     0.587
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "common"
+   },
+   "sticky_note": {
+    "file": "assets/models/props/sticky_note.glb",
+    "triangles": 48,
+    "size_m": [
+     0.1,
+     0.003,
+     0.1
+    ],
+    "bbox_min": [
+     -0.05,
+     0.0,
+     -0.05
+    ],
+    "bbox_max": [
+     0.05,
+     0.003,
+     0.05
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "The \"launch codes\" (it just says password123). Real size; scale x3 for the beak.",
+    "level": "park"
+   },
+   "signpost": {
+    "file": "assets/models/props/signpost.glb",
+    "triangles": 324,
+    "size_m": [
+     1.2,
+     1.8,
+     0.13
+    ],
+    "bbox_min": [
+     -0.6,
+     0.0,
+     -0.05
+    ],
+    "bbox_max": [
+     0.6,
+     1.8,
+     0.08
+    ],
+    "meshes": [
+     "main",
+     "face"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "Node \"face\" (1.1x0.5) takes a texture e.g. ui/textures/sign_dont_feed_geese.png",
+    "level": "common"
+   },
+   "bread_loaf": {
+    "file": "assets/models/props/bread_loaf.glb",
+    "triangles": 336,
+    "size_m": [
+     0.3,
+     0.144,
+     0.14
+    ],
+    "bbox_min": [
+     -0.15,
+     0.0,
+     -0.07
+    ],
+    "bbox_max": [
+     0.15,
+     0.144,
+     0.07
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "Goose bait / throwable lure.",
+    "level": "park"
+   },
+   "sofa": {
+    "file": "assets/models/props/sofa.glb",
+    "triangles": 2256,
+    "size_m": [
+     2.05,
+     1.277,
+     0.969
+    ],
+    "bbox_min": [
+     -1.025,
+     0.0,
+     -0.519
+    ],
+    "bbox_max": [
+     1.025,
+     1.277,
+     0.45
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "grandma"
+   },
+   "armchair": {
+    "file": "assets/models/props/armchair.glb",
+    "triangles": 1512,
+    "size_m": [
+     0.96,
+     1.146,
+     0.857
+    ],
+    "bbox_min": [
+     -0.48,
+     0.15,
+     -0.432
+    ],
+    "bbox_max": [
+     0.48,
+     1.296,
+     0.425
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "grandma"
+   },
+   "crt_tv": {
+    "file": "assets/models/props/crt_tv.glb",
+    "triangles": 948,
+    "size_m": [
+     0.9,
+     1.521,
+     0.572
+    ],
+    "bbox_min": [
+     -0.45,
+     0.0,
+     -0.295
+    ],
+    "bbox_max": [
+     0.45,
+     1.521,
+     0.277
+    ],
+    "meshes": [
+     "main",
+     "screen"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "grandma"
+   },
+   "router": {
+    "file": "assets/models/props/router.glb",
+    "triangles": 462,
+    "size_m": [
+     0.28,
+     0.25,
+     0.495
+    ],
+    "bbox_min": [
+     -0.14,
+     0.0,
+     -0.401
+    ],
+    "bbox_max": [
+     0.14,
+     0.25,
+     0.095
+    ],
+    "meshes": [
+     "main",
+     "led_power",
+     "led_wifi",
+     "led_internet"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "Blink led_* nodes (swap emissive). Mission: unplug, wait 10s, plug back in. Comes with power_plug + wall_outlet.",
+    "level": "grandma"
+   },
+   "wall_outlet": {
+    "file": "assets/models/props/wall_outlet.glb",
+    "triangles": 156,
+    "size_m": [
+     0.08,
+     0.12,
+     0.015
+    ],
+    "bbox_min": [
+     -0.04,
+     0.24,
+     0.0
+    ],
+    "bbox_max": [
+     0.04,
+     0.36,
+     0.015
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "Mount on wall (face +Z). Socket centre at y=0.3.",
+    "level": "grandma"
+   },
+   "power_plug": {
+    "file": "assets/models/props/power_plug.glb",
+    "triangles": 162,
+    "size_m": [
+     0.04,
+     0.128,
+     0.172
+    ],
+    "bbox_min": [
+     -0.02,
+     -0.103,
+     -0.018
+    ],
+    "bbox_max": [
+     0.02,
+     0.025,
+     0.154
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "Prongs face -Z, origin at prong base. Interactable.",
+    "level": "grandma"
+   },
+   "bookshelf": {
+    "file": "assets/models/props/bookshelf.glb",
+    "triangles": 840,
+    "size_m": [
+     1.0,
+     1.9,
+     0.34
+    ],
+    "bbox_min": [
+     -0.5,
+     0.0,
+     -0.17
+    ],
+    "bbox_max": [
+     0.5,
+     1.9,
+     0.17
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "grandma"
+   },
+   "floor_lamp": {
+    "file": "assets/models/props/floor_lamp.glb",
+    "triangles": 400,
+    "size_m": [
+     0.5,
+     1.7,
+     0.5
+    ],
+    "bbox_min": [
+     -0.25,
+     0.0,
+     -0.25
+    ],
+    "bbox_max": [
+     0.25,
+     1.7,
+     0.25
+    ],
+    "meshes": [
+     "main",
+     "bulb"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "common"
+   },
+   "soup_bowl": {
+    "file": "assets/models/props/soup_bowl.glb",
+    "triangles": 560,
+    "size_m": [
+     0.233,
+     0.154,
+     0.217
+    ],
+    "bbox_min": [
+     -0.11,
+     0.0,
+     -0.108
+    ],
+    "bbox_max": [
+     0.123,
+     0.154,
+     0.108
+    ],
+    "meshes": [
+     "main",
+     "soup"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "grandma"
+   },
+   "side_table": {
+    "file": "assets/models/props/side_table.glb",
+    "triangles": 396,
+    "size_m": [
+     0.6,
+     0.623,
+     0.6
+    ],
+    "bbox_min": [
+     -0.3,
+     0.0,
+     -0.3
+    ],
+    "bbox_max": [
+     0.3,
+     0.623,
+     0.3
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "common"
+   },
+   "rug": {
+    "file": "assets/models/props/rug.glb",
+    "triangles": 960,
+    "size_m": [
+     2.8,
+     0.014,
+     1.96
+    ],
+    "bbox_min": [
+     -1.4,
+     0.0,
+     -0.98
+    ],
+    "bbox_max": [
+     1.4,
+     0.014,
+     0.98
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "grandma"
+   },
+   "kitchen_counter": {
+    "file": "assets/models/props/kitchen_counter.glb",
+    "triangles": 900,
+    "size_m": [
+     2.04,
+     1.195,
+     0.65
+    ],
+    "bbox_min": [
+     -1.02,
+     0.0,
+     -0.31
+    ],
+    "bbox_max": [
+     1.02,
+     1.195,
+     0.34
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "grandma"
+   },
+   "stove": {
+    "file": "assets/models/props/stove.glb",
+    "triangles": 1248,
+    "size_m": [
+     0.805,
+     1.15,
+     0.69
+    ],
+    "bbox_min": [
+     -0.425,
+     0.0,
+     -0.325
+    ],
+    "bbox_max": [
+     0.38,
+     1.15,
+     0.365
+    ],
+    "meshes": [
+     "main",
+     "soup",
+     "burner_glow"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "grandma"
+   },
+   "fridge": {
+    "file": "assets/models/props/fridge.glb",
+    "triangles": 972,
+    "size_m": [
+     0.75,
+     1.8,
+     0.78
+    ],
+    "bbox_min": [
+     -0.375,
+     0.0,
+     -0.35
+    ],
+    "bbox_max": [
+     0.375,
+     1.8,
+     0.43
+    ],
+    "meshes": [
+     "main",
+     "door_low",
+     "door_top"
+    ],
+    "pivots": {
+     "door_low": [
+      -0.37,
+      0,
+      0.37
+     ],
+     "door_top": [
+      -0.37,
+      0,
+      0.37
+     ]
+    },
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "grandma"
+   },
+   "framed_picture": {
+    "file": "assets/models/props/framed_picture.glb",
+    "triangles": 120,
+    "size_m": [
+     0.5,
+     0.6,
+     0.045
+    ],
+    "bbox_min": [
+     -0.25,
+     0.0,
+     0.0
+    ],
+    "bbox_max": [
+     0.25,
+     0.6,
+     0.045
+    ],
+    "meshes": [
+     "main",
+     "canvas"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "Wall-mounted, back at z=0. Put a texture on node \"canvas\" (ui/textures/portrait_*.png).",
+    "level": "grandma"
+   },
+   "vase_flowers": {
+    "file": "assets/models/props/vase_flowers.glb",
+    "triangles": 880,
+    "size_m": [
+     0.22,
+     0.647,
+     0.201
+    ],
+    "bbox_min": [
+     -0.11,
+     0.0,
+     -0.101
+    ],
+    "bbox_max": [
+     0.11,
+     0.647,
+     0.101
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "common"
+   },
+   "yarn_ball": {
+    "file": "assets/models/props/yarn_ball.glb",
+    "triangles": 856,
+    "size_m": [
+     0.44,
+     0.171,
+     0.192
+    ],
+    "bbox_min": [
+     -0.087,
+     -0.006,
+     -0.087
+    ],
+    "bbox_max": [
+     0.353,
+     0.166,
+     0.105
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "grandma"
+   },
+   "birthday_cake": {
+    "file": "assets/models/props/birthday_cake.glb",
+    "triangles": 4416,
+    "size_m": [
+     0.8,
+     0.57,
+     0.8
+    ],
+    "bbox_min": [
+     -0.4,
+     0.0,
+     -0.4
+    ],
+    "bbox_max": [
+     0.4,
+     0.57,
+     0.4
+    ],
+    "meshes": [
+     "main",
+     "flames"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "Flicker node \"flames\" (scale.y). The objective in L5: protect this cake.",
+    "level": "party"
+   },
+   "party_table": {
+    "file": "assets/models/props/party_table.glb",
+    "triangles": 624,
+    "size_m": [
+     1.24,
+     0.855,
+     1.24
+    ],
+    "bbox_min": [
+     -0.62,
+     0.0,
+     -0.62
+    ],
+    "bbox_max": [
+     0.62,
+     0.855,
+     0.62
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "party"
+   },
+   "gift_box": {
+    "file": "assets/models/props/gift_box.glb",
+    "triangles": 336,
+    "size_m": [
+     0.44,
+     0.454,
+     0.44
+    ],
+    "bbox_min": [
+     -0.22,
+     0.0,
+     -0.22
+    ],
+    "bbox_max": [
+     0.22,
+     0.454,
+     0.22
+    ],
+    "meshes": [
+     "wrap",
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [
+     "tint_wrap"
+    ],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "party"
+   },
+   "balloon_plain": {
+    "file": "assets/models/props/balloon_plain.glb",
+    "triangles": 456,
+    "size_m": [
+     0.36,
+     1.766,
+     0.36
+    ],
+    "bbox_min": [
+     -0.18,
+     -0.0,
+     -0.18
+    ],
+    "bbox_max": [
+     0.18,
+     1.766,
+     0.18
+    ],
+    "meshes": [
+     "balloon",
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [
+     "tint_balloon"
+    ],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "party"
+   },
+   "party_hat": {
+    "file": "assets/models/props/party_hat.glb",
+    "triangles": 636,
+    "size_m": [
+     0.16,
+     0.25,
+     0.158
+    ],
+    "bbox_min": [
+     -0.08,
+     0.0,
+     -0.079
+    ],
+    "bbox_max": [
+     0.08,
+     0.25,
+     0.079
+    ],
+    "meshes": [
+     "hat",
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [
+     "tint_hat"
+    ],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "party"
+   },
+   "cupcake": {
+    "file": "assets/models/props/cupcake.glb",
+    "triangles": 264,
+    "size_m": [
+     0.11,
+     0.154,
+     0.11
+    ],
+    "bbox_min": [
+     -0.055,
+     0.0,
+     -0.055
+    ],
+    "bbox_max": [
+     0.055,
+     0.154,
+     0.055
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "party"
+   },
+   "bouncy_castle": {
+    "file": "assets/models/props/bouncy_castle.glb",
+    "triangles": 3292,
+    "size_m": [
+     4.4,
+     3.05,
+     4.38
+    ],
+    "bbox_min": [
+     -2.2,
+     0.0,
+     -2.19
+    ],
+    "bbox_max": [
+     2.2,
+     3.05,
+     2.19
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "4x4m, open front (+Z). Players can jump in it for a super-bounce.",
+    "level": "party"
+   },
+   "bed": {
+    "file": "assets/models/props/bed.glb",
+    "triangles": 2124,
+    "size_m": [
+     1.7,
+     1.1,
+     2.17
+    ],
+    "bbox_min": [
+     -0.85,
+     0.0,
+     -1.09
+    ],
+    "bbox_max": [
+     0.85,
+     1.1,
+     1.08
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "bedroom"
+   },
+   "nightstand": {
+    "file": "assets/models/props/nightstand.glb",
+    "triangles": 168,
+    "size_m": [
+     0.5,
+     0.575,
+     0.46
+    ],
+    "bbox_min": [
+     -0.25,
+     0.0,
+     -0.21
+    ],
+    "bbox_max": [
+     0.25,
+     0.575,
+     0.25
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "bedroom"
+   },
+   "slipper": {
+    "file": "assets/models/props/slipper.glb",
+    "triangles": 588,
+    "size_m": [
+     0.112,
+     0.11,
+     0.291
+    ],
+    "bbox_min": [
+     -0.056,
+     0.0,
+     -0.14
+    ],
+    "bbox_max": [
+     0.056,
+     0.11,
+     0.151
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "bedroom"
+   },
+   "book_stack": {
+    "file": "assets/models/props/book_stack.glb",
+    "triangles": 480,
+    "size_m": [
+     0.244,
+     0.142,
+     0.186
+    ],
+    "bbox_min": [
+     -0.117,
+     0.0,
+     -0.093
+    ],
+    "bbox_max": [
+     0.127,
+     0.142,
+     0.093
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "bedroom"
+   },
+   "phone": {
+    "file": "assets/models/props/phone.glb",
+    "triangles": 120,
+    "size_m": [
+     0.075,
+     0.01,
+     0.155
+    ],
+    "bbox_min": [
+     -0.038,
+     0.0,
+     -0.077
+    ],
+    "bbox_max": [
+     0.038,
+     0.01,
+     0.077
+    ],
+    "meshes": [
+     "main",
+     "screen"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "Lying flat, screen up. Glow it with notifications (they are the boss projectiles in L6).",
+    "level": "bedroom"
+   },
+   "pillow": {
+    "file": "assets/models/props/pillow.glb",
+    "triangles": 588,
+    "size_m": [
+     0.6,
+     0.14,
+     0.4
+    ],
+    "bbox_min": [
+     -0.3,
+     0.0,
+     -0.2
+    ],
+    "bbox_max": [
+     0.3,
+     0.14,
+     0.2
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "Also the Pillow Cannon projectile (scale 0.35).",
+    "level": "bedroom"
+   },
+   "sock": {
+    "file": "assets/models/props/sock.glb",
+    "triangles": 196,
+    "size_m": [
+     0.086,
+     0.193,
+     0.263
+    ],
+    "bbox_min": [
+     -0.043,
+     -0.013,
+     -0.12
+    ],
+    "bbox_max": [
+     0.043,
+     0.18,
+     0.143
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "level": "bedroom"
+   },
+   "coffee_cup": {
+    "file": "assets/models/props/coffee_cup.glb",
+    "triangles": 196,
+    "size_m": [
+     0.096,
+     0.155,
+     0.094
+    ],
+    "bbox_min": [
+     -0.048,
+     0.0,
+     -0.047
+    ],
+    "bbox_max": [
+     0.048,
+     0.155,
+     0.047
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "Pickup: speed boost (\"DOUBLE ESPRESSO\"). Spin + bob.",
+    "level": "pickup"
+   },
+   "donut": {
+    "file": "assets/models/props/donut.glb",
+    "triangles": 912,
+    "size_m": [
+     0.212,
+     0.071,
+     0.209
+    ],
+    "bbox_min": [
+     -0.106,
+     0.002,
+     -0.104
+    ],
+    "bbox_max": [
+     0.106,
+     0.073,
+     0.104
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "Pickup: +1 health. Spin + bob.",
+    "level": "pickup"
+   }
+  },
+  "weapons": {
+   "dart_pistol": {
+    "file": "assets/models/weapons/dart_pistol.glb",
+    "triangles": 1056,
+    "size_m": [
+     0.086,
+     0.236,
+     0.43
+    ],
+    "bbox_min": [
+     -0.043,
+     -0.088,
+     -0.36
+    ],
+    "bbox_max": [
+     0.043,
+     0.147,
+     0.07
+    ],
+    "meshes": [
+     "main",
+     "loaded_dart"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [
+     "muzzle",
+     "grip_L"
+    ],
+    "bones": [],
+    "animations": [],
+    "level": "L1"
+   },
+   "dart": {
+    "file": "assets/models/weapons/dart.glb",
+    "triangles": 168,
+    "size_m": [
+     0.04,
+     0.04,
+     0.135
+    ],
+    "bbox_min": [
+     -0.02,
+     -0.02,
+     -0.08
+    ],
+    "bbox_max": [
+     0.02,
+     0.02,
+     0.055
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "Tranquilliser foam dart: tip points -Z. Sticks to whatever it hits.",
+    "level": "L1"
+   },
+   "net_launcher": {
+    "file": "assets/models/weapons/net_launcher.glb",
+    "triangles": 1512,
+    "size_m": [
+     0.18,
+     0.262,
+     0.546
+    ],
+    "bbox_min": [
+     -0.09,
+     -0.103,
+     -0.456
+    ],
+    "bbox_max": [
+     0.09,
+     0.159,
+     0.09
+    ],
+    "meshes": [
+     "main",
+     "loaded_net"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [
+     "muzzle",
+     "grip_L"
+    ],
+    "bones": [],
+    "animations": [],
+    "level": "L3"
+   },
+   "net_projectile": {
+    "file": "assets/models/weapons/net_projectile.glb",
+    "triangles": 1688,
+    "size_m": [
+     1.216,
+     1.216,
+     0.348
+    ],
+    "bbox_min": [
+     -0.608,
+     -0.608,
+     -0.308
+    ],
+    "bbox_max": [
+     0.608,
+     0.608,
+     0.04
+    ],
+    "meshes": [
+     "main"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "Opened net, flies along -Z. Scale from 0.1 to 1 over first 0.2s of flight. On hit, drape over target + play goose \"Netted\".",
+    "level": "L3"
+   },
+   "water_blaster": {
+    "file": "assets/models/weapons/water_blaster.glb",
+    "triangles": 1248,
+    "size_m": [
+     0.14,
+     0.363,
+     0.61
+    ],
+    "bbox_min": [
+     -0.07,
+     -0.103,
+     -0.48
+    ],
+    "bbox_max": [
+     0.07,
+     0.26,
+     0.13
+    ],
+    "meshes": [
+     "main",
+     "water_level",
+     "pump"
+    ],
+    "pivots": {
+     "water_level": [
+      0,
+      0.17,
+      0.06
+     ]
+    },
+    "tint_materials": [],
+    "markers": [
+     "muzzle",
+     "grip_L"
+    ],
+    "bones": [],
+    "animations": [],
+    "note": "Scale node \"water_level\" on Z (0..1) for ammo. Slide node \"pump\" +Z to pump.",
+    "level": "L5"
+   },
+   "pillow_cannon": {
+    "file": "assets/models/weapons/pillow_cannon.glb",
+    "triangles": 2392,
+    "size_m": [
+     0.29,
+     0.383,
+     0.78
+    ],
+    "bbox_min": [
+     -0.145,
+     -0.133,
+     -0.56
+    ],
+    "bbox_max": [
+     0.145,
+     0.25,
+     0.22
+    ],
+    "meshes": [
+     "main",
+     "loaded_pillow"
+    ],
+    "pivots": {},
+    "tint_materials": [],
+    "markers": [
+     "muzzle",
+     "grip_L"
+    ],
+    "bones": [],
+    "animations": [],
+    "note": "Shoulder-mounted: hold lower/right. Projectile = props/pillow.glb scaled 0.35.",
+    "level": "L6"
+   },
+   "fp_arms": {
+    "file": "assets/models/weapons/fp_arms.glb",
+    "triangles": 1944,
+    "size_m": [
+     0.537,
+     0.27,
+     0.642
+    ],
+    "bbox_min": [
+     -0.394,
+     -0.22,
+     -0.064
+    ],
+    "bbox_max": [
+     0.144,
+     0.05,
+     0.578
+    ],
+    "meshes": [
+     "arm_R",
+     "arm_L"
+    ],
+    "pivots": {
+     "arm_R": [
+      0.0,
+      0,
+      0
+     ],
+     "arm_L": [
+      -0.25,
+      0,
+      0
+     ]
+    },
+    "tint_materials": [],
+    "markers": [],
+    "bones": [],
+    "animations": [],
+    "note": "Black-suit gloved arms. Nodes \"arm_R\"/\"arm_L\" have origin at the palm; place arm_R at the weapon origin and arm_L at the weapon \"grip_L\" marker (mirror pose is baked). Sleeves extend toward +Z (behind the camera).",
+    "level": "all"
+   }
+  }
+ },
+ "textures": {
+  "carpet_office": {
+   "file": "assets/textures/carpet_office.png",
+   "size": [
+    512,
+    512
+   ],
+   "tileable": true,
+   "use": "Office floor",
+   "metres_per_tile": 2
+  },
+  "wall_office": {
+   "file": "assets/textures/wall_office.png",
+   "size": [
+    512,
+    512
+   ],
+   "tileable": true,
+   "use": "Office walls (beige)",
+   "metres_per_tile": 3
+  },
+  "ceiling_tiles": {
+   "file": "assets/textures/ceiling_tiles.png",
+   "size": [
+    512,
+    512
+   ],
+   "tileable": true,
+   "use": "Office ceiling (2x2 tiles per texture)",
+   "metres_per_tile": 1.2
+  },
+  "wood_floor": {
+   "file": "assets/textures/wood_floor.png",
+   "size": [
+    512,
+    512
+   ],
+   "tileable": true,
+   "use": "Grandma house floor / bedroom floor",
+   "metres_per_tile": 2
+  },
+  "brick": {
+   "file": "assets/textures/brick.png",
+   "size": [
+    512,
+    512
+   ],
+   "tileable": true,
+   "use": "Chimneys, building walls",
+   "metres_per_tile": 2
+  },
+  "roof_gravel": {
+   "file": "assets/textures/roof_gravel.png",
+   "size": [
+    512,
+    512
+   ],
+   "tileable": true,
+   "use": "Flat rooftops (L2)",
+   "metres_per_tile": 3
+  },
+  "concrete": {
+   "file": "assets/textures/concrete.png",
+   "size": [
+    512,
+    512
+   ],
+   "tileable": true,
+   "use": "Ledges, sidewalks",
+   "metres_per_tile": 3
+  },
+  "grass": {
+   "file": "assets/textures/grass.png",
+   "size": [
+    512,
+    512
+   ],
+   "tileable": true,
+   "use": "Park, party lawn",
+   "metres_per_tile": 4
+  },
+  "dirt_path": {
+   "file": "assets/textures/dirt_path.png",
+   "size": [
+    512,
+    512
+   ],
+   "tileable": true,
+   "use": "Park paths",
+   "metres_per_tile": 3
+  },
+  "water": {
+   "file": "assets/textures/water.png",
+   "size": [
+    512,
+    512
+   ],
+   "tileable": true,
+   "use": "Pond (scroll UVs slowly)",
+   "metres_per_tile": 6
+  },
+  "wallpaper_floral": {
+   "file": "assets/textures/wallpaper_floral.png",
+   "size": [
+    512,
+    512
+   ],
+   "tileable": true,
+   "use": "Grandma house walls",
+   "metres_per_tile": 2
+  },
+  "tile_checker": {
+   "file": "assets/textures/tile_checker.png",
+   "size": [
+    512,
+    512
+   ],
+   "tileable": true,
+   "use": "Grandma kitchen floor",
+   "metres_per_tile": 2
+  },
+  "carpet_bedroom": {
+   "file": "assets/textures/carpet_bedroom.png",
+   "size": [
+    512,
+    512
+   ],
+   "tileable": true,
+   "use": "L6 giant bedroom floor (scale up a lot: you are tiny)",
+   "metres_per_tile": 1
+  },
+  "building_facade": {
+   "file": "assets/textures/building_facade.png",
+   "size": [
+    512,
+    512
+   ],
+   "tileable": true,
+   "use": "Rooftop-level building walls (4x4 windows per tile)",
+   "metres_per_tile": 12
+  },
+  "party_stripes": {
+   "file": "assets/textures/party_stripes.png",
+   "size": [
+    512,
+    512
+   ],
+   "tileable": true,
+   "use": "Party tent / backdrop",
+   "metres_per_tile": 2
+  },
+  "banner_happy_gary_day": {
+   "file": "assets/textures/banner_happy_gary_day.png",
+   "size": [
+    1536,
+    384
+   ],
+   "tileable": false,
+   "use": "L1 office banner (ratio 4:1)"
+  },
+  "poster_gary_employee": {
+   "file": "assets/textures/poster_gary_employee.png",
+   "size": [
+    512,
+    640
+   ],
+   "tileable": false,
+   "use": "L1 wall poster. Leave the blank middle for a render of Gary (ui/renders/portrait_gary.png) or draw a frame."
+  },
+  "sign_dont_feed_geese": {
+   "file": "assets/textures/sign_dont_feed_geese.png",
+   "size": [
+    1100,
+    500
+   ],
+   "tileable": false,
+   "use": "L3 park signpost face (signpost.glb node \"face\")"
+  },
+  "sign_launch_codes": {
+   "file": "assets/textures/sign_launch_codes.png",
+   "size": [
+    600,
+    600
+   ],
+   "tileable": false,
+   "use": "L3 sticky note close-up / HUD item"
+  },
+  "billboard_cold_feet": {
+   "file": "assets/textures/billboard_cold_feet.png",
+   "size": [
+    1260,
+    600
+   ],
+   "tileable": false,
+   "use": "L2 billboard (billboard.glb node \"face\")"
+  },
+  "billboard_megacorp": {
+   "file": "assets/textures/billboard_megacorp.png",
+   "size": [
+    1260,
+    600
+   ],
+   "tileable": false,
+   "use": "L2 billboard alt"
+  },
+  "banner_birthday": {
+   "file": "assets/textures/banner_birthday.png",
+   "size": [
+    1536,
+    384
+   ],
+   "tileable": false,
+   "use": "L5 party banner"
+  },
+  "mug_okayest_boss": {
+   "file": "assets/textures/mug_okayest_boss.png",
+   "size": [
+    512,
+    160
+   ],
+   "tileable": false,
+   "use": "Gary's mug wrap"
+  },
+  "name_badge_gary": {
+   "file": "assets/textures/name_badge_gary.png",
+   "size": [
+    256,
+    340
+   ],
+   "tileable": false,
+   "use": "Lanyard badge"
+  },
+  "wifi_password_note": {
+   "file": "assets/textures/wifi_password_note.png",
+   "size": [
+    600,
+    400
+   ],
+   "tileable": false,
+   "use": "L4 fridge note"
+  },
+  "cross_stitch_home": {
+   "file": "assets/textures/cross_stitch_home.png",
+   "size": [
+    600,
+    450
+   ],
+   "tileable": false,
+   "use": "L4 framed cross-stitch (framed_picture.glb node 'canvas')"
+  },
+  "clock_face_text": {
+   "file": "assets/textures/clock_face_text.png",
+   "size": [
+    512,
+    128
+   ],
+   "tileable": false,
+   "use": "L6 digital readout / HUD"
+  }
+ },
+ "audio": {
+  "sfx": {
+   "ui_hover": {
+    "file": "assets/audio/sfx/ui_hover.wav",
+    "seconds": 0.04,
+    "loop": false,
+    "use": "Menu item hover"
+   },
+   "ui_click": {
+    "file": "assets/audio/sfx/ui_click.wav",
+    "seconds": 0.07,
+    "loop": false,
+    "use": "Menu click"
+   },
+   "ui_confirm": {
+    "file": "assets/audio/sfx/ui_confirm.wav",
+    "seconds": 0.24,
+    "loop": false,
+    "use": "Start level / confirm"
+   },
+   "ui_back": {
+    "file": "assets/audio/sfx/ui_back.wav",
+    "seconds": 0.19,
+    "loop": false,
+    "use": "Back / cancel"
+   },
+   "ui_locked": {
+    "file": "assets/audio/sfx/ui_locked.wav",
+    "seconds": 0.25,
+    "loop": false,
+    "use": "Clicked a locked level"
+   },
+   "dart_fire": {
+    "file": "assets/audio/sfx/dart_fire.wav",
+    "seconds": 0.12,
+    "loop": false,
+    "use": "Dart pistol shot (thwip!)"
+   },
+   "dart_hit": {
+    "file": "assets/audio/sfx/dart_hit.wav",
+    "seconds": 0.35,
+    "loop": false,
+    "use": "Dart sticks (thunk + boing)"
+   },
+   "net_fire": {
+    "file": "assets/audio/sfx/net_fire.wav",
+    "seconds": 0.35,
+    "loop": false,
+    "use": "Net launcher (whoomp)"
+   },
+   "net_hit": {
+    "file": "assets/audio/sfx/net_hit.wav",
+    "seconds": 0.4,
+    "loop": false,
+    "use": "Net lands on something (rustle)"
+   },
+   "water_fire": {
+    "file": "assets/audio/sfx/water_fire.wav",
+    "seconds": 0.25,
+    "loop": false,
+    "use": "Water blaster squirt"
+   },
+   "water_splash": {
+    "file": "assets/audio/sfx/water_splash.wav",
+    "seconds": 0.4,
+    "loop": false,
+    "use": "Water hits / balloon drips"
+   },
+   "pillow_fire": {
+    "file": "assets/audio/sfx/pillow_fire.wav",
+    "seconds": 0.3,
+    "loop": false,
+    "use": "Pillow cannon (fwump)"
+   },
+   "pillow_hit": {
+    "file": "assets/audio/sfx/pillow_hit.wav",
+    "seconds": 0.3,
+    "loop": false,
+    "use": "Pillow impact (poof)"
+   },
+   "empty_click": {
+    "file": "assets/audio/sfx/empty_click.wav",
+    "seconds": 0.03,
+    "loop": false,
+    "use": "Out of ammo click"
+   },
+   "reload": {
+    "file": "assets/audio/sfx/reload.wav",
+    "seconds": 0.22,
+    "loop": false,
+    "use": "Reload / pump"
+   },
+   "footstep_1": {
+    "file": "assets/audio/sfx/footstep_1.wav",
+    "seconds": 0.08,
+    "loop": false,
+    "use": "Footstep variant (randomise pitch 0.9-1.1)"
+   },
+   "footstep_2": {
+    "file": "assets/audio/sfx/footstep_2.wav",
+    "seconds": 0.08,
+    "loop": false,
+    "use": "Footstep variant (randomise pitch 0.9-1.1)"
+   },
+   "footstep_3": {
+    "file": "assets/audio/sfx/footstep_3.wav",
+    "seconds": 0.08,
+    "loop": false,
+    "use": "Footstep variant (randomise pitch 0.9-1.1)"
+   },
+   "jump": {
+    "file": "assets/audio/sfx/jump.wav",
+    "seconds": 0.22,
+    "loop": false,
+    "use": "Jump (cartoon boing up)"
+   },
+   "land": {
+    "file": "assets/audio/sfx/land.wav",
+    "seconds": 0.18,
+    "loop": false,
+    "use": "Land"
+   },
+   "slide_whistle_up": {
+    "file": "assets/audio/sfx/slide_whistle_up.wav",
+    "seconds": 0.55,
+    "loop": false,
+    "use": "Comedy rise (wall-run, big jump)"
+   },
+   "slide_whistle_down": {
+    "file": "assets/audio/sfx/slide_whistle_down.wav",
+    "seconds": 0.65,
+    "loop": false,
+    "use": "Comedy fall (fell off roof)"
+   },
+   "tackle": {
+    "file": "assets/audio/sfx/tackle.wav",
+    "seconds": 0.75,
+    "loop": false,
+    "use": "Tackle the groom (thud + boing)"
+   },
+   "whoosh": {
+    "file": "assets/audio/sfx/whoosh.wav",
+    "seconds": 0.35,
+    "loop": false,
+    "use": "Fast movement / swing"
+   },
+   "honk_1": {
+    "file": "assets/audio/sfx/honk_1.wav",
+    "seconds": 0.32,
+    "loop": false,
+    "use": "Goose honk"
+   },
+   "honk_2": {
+    "file": "assets/audio/sfx/honk_2.wav",
+    "seconds": 0.47,
+    "loop": false,
+    "use": "Goose double honk (angry)"
+   },
+   "honk_charge": {
+    "file": "assets/audio/sfx/honk_charge.wav",
+    "seconds": 0.75,
+    "loop": false,
+    "use": "Goose charging (HONKHONKHONK)"
+   },
+   "meow": {
+    "file": "assets/audio/sfx/meow.wav",
+    "seconds": 0.6,
+    "loop": false,
+    "use": "Cat meow (it knocked something over)"
+   },
+   "cat_knock": {
+    "file": "assets/audio/sfx/cat_knock.wav",
+    "seconds": 0.8,
+    "loop": false,
+    "use": "Something falls & shatters (alerts grandma)"
+   },
+   "balloon_squeak": {
+    "file": "assets/audio/sfx/balloon_squeak.wav",
+    "seconds": 0.4,
+    "loop": false,
+    "use": "Balloon animal squeak / bite"
+   },
+   "balloon_pop": {
+    "file": "assets/audio/sfx/balloon_pop.wav",
+    "seconds": 0.25,
+    "loop": false,
+    "use": "Balloon pop"
+   },
+   "alarm_ring": {
+    "file": "assets/audio/sfx/alarm_ring.wav",
+    "seconds": 1.0,
+    "loop": true,
+    "use": "Alarm clock boss ringing (loopable ~1s)"
+   },
+   "snooze_bonk": {
+    "file": "assets/audio/sfx/snooze_bonk.wav",
+    "seconds": 0.6,
+    "loop": false,
+    "use": "Hit the snooze button (BONK)"
+   },
+   "boss_hurt": {
+    "file": "assets/audio/sfx/boss_hurt.wav",
+    "seconds": 0.35,
+    "loop": false,
+    "use": "Boss damaged"
+   },
+   "boss_defeat": {
+    "file": "assets/audio/sfx/boss_defeat.wav",
+    "seconds": 3.9,
+    "loop": false,
+    "use": "Boss defeated (kaboom + bells)"
+   },
+   "router_beep": {
+    "file": "assets/audio/sfx/router_beep.wav",
+    "seconds": 0.24,
+    "loop": false,
+    "use": "Router beep"
+   },
+   "power_down": {
+    "file": "assets/audio/sfx/power_down.wav",
+    "seconds": 0.75,
+    "loop": false,
+    "use": "Unplug (power down)"
+   },
+   "power_up": {
+    "file": "assets/audio/sfx/power_up.wav",
+    "seconds": 0.65,
+    "loop": false,
+    "use": "Plug back in (power up)"
+   },
+   "slurp": {
+    "file": "assets/audio/sfx/slurp.wav",
+    "seconds": 0.9,
+    "loop": false,
+    "use": "Forced to eat soup (slurp)"
+   },
+   "gulp": {
+    "file": "assets/audio/sfx/gulp.wav",
+    "seconds": 0.2,
+    "loop": false,
+    "use": "Gulp"
+   },
+   "munch": {
+    "file": "assets/audio/sfx/munch.wav",
+    "seconds": 0.64,
+    "loop": false,
+    "use": "Balloon animals eating the cake"
+   },
+   "snore": {
+    "file": "assets/audio/sfx/snore.wav",
+    "seconds": 1.8,
+    "loop": true,
+    "use": "Tranquillised NPC snoring (loopable)"
+   },
+   "clue_found": {
+    "file": "assets/audio/sfx/clue_found.wav",
+    "seconds": 0.68,
+    "loop": false,
+    "use": "New dossier clue unlocked"
+   },
+   "wrong_target": {
+    "file": "assets/audio/sfx/wrong_target.wav",
+    "seconds": 0.68,
+    "loop": false,
+    "use": "Darted the wrong Gary (buzzer)"
+   },
+   "spotted": {
+    "file": "assets/audio/sfx/spotted.wav",
+    "seconds": 0.4,
+    "loop": false,
+    "use": "You were spotted! (!)"
+   },
+   "crowd_gasp": {
+    "file": "assets/audio/sfx/crowd_gasp.wav",
+    "seconds": 1.0,
+    "loop": false,
+    "use": "Office gasps"
+   },
+   "pickup": {
+    "file": "assets/audio/sfx/pickup.wav",
+    "seconds": 0.25,
+    "loop": false,
+    "use": "Pickup collected"
+   },
+   "confetti": {
+    "file": "assets/audio/sfx/confetti.wav",
+    "seconds": 0.3,
+    "loop": false,
+    "use": "Confetti pop"
+   },
+   "timer_tick": {
+    "file": "assets/audio/sfx/timer_tick.wav",
+    "seconds": 0.03,
+    "loop": false,
+    "use": "Countdown tick"
+   },
+   "mission_failed": {
+    "file": "assets/audio/sfx/mission_failed.wav",
+    "seconds": 2.75,
+    "loop": false,
+    "use": "Mission failed stinger (wah wah wah waaah)"
+   },
+   "mission_complete": {
+    "file": "assets/audio/sfx/mission_complete.wav",
+    "seconds": 1.68,
+    "loop": false,
+    "use": "Mission complete fanfare"
+   },
+   "gary_hum": {
+    "file": "assets/audio/sfx/gary_hum.wav",
+    "seconds": 5.5,
+    "loop": true,
+    "use": "The REAL Gary hums this (positional audio, loop). Decoys never hum."
+   }
+  },
+  "music": {
+   "music_menu": {
+    "file": "assets/audio/music/music_menu.wav",
+    "seconds": 17.45,
+    "loop": true,
+    "use": "Main menu / level select (spy jazz)"
+   },
+   "music_office": {
+    "file": "assets/audio/music/music_office.wav",
+    "seconds": 18.46,
+    "loop": true,
+    "use": "L1 Office: sneaky tip-toe"
+   },
+   "music_chase": {
+    "file": "assets/audio/music/music_chase.wav",
+    "seconds": 12.31,
+    "loop": true,
+    "use": "L2 Rooftop chase: fast & frantic"
+   },
+   "music_park": {
+    "file": "assets/audio/music/music_park.wav",
+    "seconds": 16.0,
+    "loop": true,
+    "use": "L3 Goose park: goofy oom-pah"
+   },
+   "music_grandma": {
+    "file": "assets/audio/music/music_grandma.wav",
+    "seconds": 22.5,
+    "loop": true,
+    "use": "L4 Grandma house: music-box waltz (creepy-cosy)"
+   },
+   "music_party": {
+    "file": "assets/audio/music/music_party.wav",
+    "seconds": 13.33,
+    "loop": true,
+    "use": "L5 Birthday party defence: chiptune polka"
+   },
+   "music_boss": {
+    "file": "assets/audio/music/music_boss.wav",
+    "seconds": 13.71,
+    "loop": true,
+    "use": "L6 Alarm clock boss fight"
+   }
+  }
+ },
+ "ui": {
+  "crosshair": {
+   "file": "assets/ui/icons/crosshair.svg",
+   "use": "Default crosshair (white, draw with a dark drop-shadow)"
+  },
+  "heart": {
+   "file": "assets/ui/icons/heart.svg",
+   "use": "Health"
+  },
+  "lock": {
+   "file": "assets/ui/icons/lock.svg",
+   "use": "Locked level"
+  },
+  "star": {
+   "file": "assets/ui/icons/star.svg",
+   "use": "Rating star (earned)"
+  },
+  "star_empty": {
+   "file": "assets/ui/icons/star_empty.svg",
+   "use": "Rating star (not earned)"
+  },
+  "check": {
+   "file": "assets/ui/icons/check.svg",
+   "use": "Level completed"
+  },
+  "clue_mustache": {
+   "file": "assets/ui/icons/clue_mustache.svg",
+   "use": "Clue: real (straight) mustache"
+  },
+  "clue_stain": {
+   "file": "assets/ui/icons/clue_stain.svg",
+   "use": "Clue: coffee stain on tie"
+  },
+  "clue_watch_right": {
+   "file": "assets/ui/icons/clue_watch_right.svg",
+   "use": "Clue: watch on RIGHT wrist"
+  },
+  "clue_pen": {
+   "file": "assets/ui/icons/clue_pen.svg",
+   "use": "Clue: pen behind ear"
+  },
+  "clue_mug": {
+   "file": "assets/ui/icons/clue_mug.svg",
+   "use": "Clue: carries the WORLD'S OKAYEST BOSS mug"
+  },
+  "clue_hum": {
+   "file": "assets/ui/icons/clue_hum.svg",
+   "use": "Clue: he hums (listen!)"
+  },
+  "clue_unknown": {
+   "file": "assets/ui/icons/clue_unknown.svg",
+   "use": "Clue not unlocked yet"
+  },
+  "soup": {
+   "file": "assets/ui/icons/soup.svg",
+   "use": "L4 soup meter (3 bowls = food coma = fail)"
+  },
+  "ring": {
+   "file": "assets/ui/icons/ring.svg",
+   "use": "L2 objective: the ring / groom"
+  },
+  "timer": {
+   "file": "assets/ui/icons/timer.svg",
+   "use": "Timer"
+  },
+  "cake": {
+   "file": "assets/ui/icons/cake.svg",
+   "use": "L5 cake health"
+  },
+  "snooze": {
+   "file": "assets/ui/icons/snooze.svg",
+   "use": "L6 weak point indicator"
+  },
+  "ammo_dart": {
+   "file": "assets/ui/icons/ammo_dart.svg",
+   "use": "Dart ammo"
+  },
+  "ammo_net": {
+   "file": "assets/ui/icons/ammo_net.svg",
+   "use": "Net ammo"
+  },
+  "ammo_water": {
+   "file": "assets/ui/icons/ammo_water.svg",
+   "use": "Water tank"
+  },
+  "ammo_pillow": {
+   "file": "assets/ui/icons/ammo_pillow.svg",
+   "use": "Pillow ammo"
+  },
+  "router": {
+   "file": "assets/ui/icons/router.svg",
+   "use": "L4 objective"
+  },
+  "eye": {
+   "file": "assets/ui/icons/eye.svg",
+   "use": "Stealth: being watched"
+  },
+  "exclaim": {
+   "file": "assets/ui/icons/exclaim.svg",
+   "use": "Spotted / alert"
+  },
+  "pause": {
+   "file": "assets/ui/icons/pause.svg",
+   "use": "Pause"
+  },
+  "sound_on": {
+   "file": "assets/ui/icons/sound_on.svg",
+   "use": "Sound on"
+  },
+  "sound_off": {
+   "file": "assets/ui/icons/sound_off.svg",
+   "use": "Sound off"
+  },
+  "logo": {
+   "file": "assets/ui/logo.svg",
+   "use": "Title logo (main menu). Game title: TOTALLY PROFESSIONAL"
+  },
+  "favicon": {
+   "file": "assets/ui/favicon.svg",
+   "use": "Browser tab icon"
+  }
+ },
+ "renders": {
+  "lineup_garys": "assets/ui/renders/lineup_garys.png",
+  "menu_background": "assets/ui/renders/menu_background.png",
+  "portrait_alarm_clock": "assets/ui/renders/portrait_alarm_clock.png",
+  "portrait_balloon_giraffe": "assets/ui/renders/portrait_balloon_giraffe.png",
+  "portrait_cat": "assets/ui/renders/portrait_cat.png",
+  "portrait_gary": "assets/ui/renders/portrait_gary.png",
+  "portrait_goose": "assets/ui/renders/portrait_goose.png",
+  "portrait_grandma": "assets/ui/renders/portrait_grandma.png",
+  "portrait_groom": "assets/ui/renders/portrait_groom.png",
+  "thumb_l1_office": "assets/ui/renders/thumb_l1_office.png",
+  "thumb_l2_rooftops": "assets/ui/renders/thumb_l2_rooftops.png",
+  "thumb_l3_park": "assets/ui/renders/thumb_l3_park.png",
+  "thumb_l4_grandma": "assets/ui/renders/thumb_l4_grandma.png",
+  "thumb_l5_party": "assets/ui/renders/thumb_l5_party.png",
+  "thumb_l6_bedroom": "assets/ui/renders/thumb_l6_bedroom.png"
+ }
+}

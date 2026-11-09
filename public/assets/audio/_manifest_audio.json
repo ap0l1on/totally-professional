@@ -1,0 +1,360 @@
+{
+ "sfx": {
+  "ui_hover": {
+   "file": "assets/audio/sfx/ui_hover.wav",
+   "seconds": 0.04,
+   "loop": false,
+   "use": "Menu item hover"
+  },
+  "ui_click": {
+   "file": "assets/audio/sfx/ui_click.wav",
+   "seconds": 0.07,
+   "loop": false,
+   "use": "Menu click"
+  },
+  "ui_confirm": {
+   "file": "assets/audio/sfx/ui_confirm.wav",
+   "seconds": 0.24,
+   "loop": false,
+   "use": "Start level / confirm"
+  },
+  "ui_back": {
+   "file": "assets/audio/sfx/ui_back.wav",
+   "seconds": 0.19,
+   "loop": false,
+   "use": "Back / cancel"
+  },
+  "ui_locked": {
+   "file": "assets/audio/sfx/ui_locked.wav",
+   "seconds": 0.25,
+   "loop": false,
+   "use": "Clicked a locked level"
+  },
+  "dart_fire": {
+   "file": "assets/audio/sfx/dart_fire.wav",
+   "seconds": 0.12,
+   "loop": false,
+   "use": "Dart pistol shot (thwip!)"
+  },
+  "dart_hit": {
+   "file": "assets/audio/sfx/dart_hit.wav",
+   "seconds": 0.35,
+   "loop": false,
+   "use": "Dart sticks (thunk + boing)"
+  },
+  "net_fire": {
+   "file": "assets/audio/sfx/net_fire.wav",
+   "seconds": 0.35,
+   "loop": false,
+   "use": "Net launcher (whoomp)"
+  },
+  "net_hit": {
+   "file": "assets/audio/sfx/net_hit.wav",
+   "seconds": 0.4,
+   "loop": false,
+   "use": "Net lands on something (rustle)"
+  },
+  "water_fire": {
+   "file": "assets/audio/sfx/water_fire.wav",
+   "seconds": 0.25,
+   "loop": false,
+   "use": "Water blaster squirt"
+  },
+  "water_splash": {
+   "file": "assets/audio/sfx/water_splash.wav",
+   "seconds": 0.4,
+   "loop": false,
+   "use": "Water hits / balloon drips"
+  },
+  "pillow_fire": {
+   "file": "assets/audio/sfx/pillow_fire.wav",
+   "seconds": 0.3,
+   "loop": false,
+   "use": "Pillow cannon (fwump)"
+  },
+  "pillow_hit": {
+   "file": "assets/audio/sfx/pillow_hit.wav",
+   "seconds": 0.3,
+   "loop": false,
+   "use": "Pillow impact (poof)"
+  },
+  "empty_click": {
+   "file": "assets/audio/sfx/empty_click.wav",
+   "seconds": 0.03,
+   "loop": false,
+   "use": "Out of ammo click"
+  },
+  "reload": {
+   "file": "assets/audio/sfx/reload.wav",
+   "seconds": 0.22,
+   "loop": false,
+   "use": "Reload / pump"
+  },
+  "footstep_1": {
+   "file": "assets/audio/sfx/footstep_1.wav",
+   "seconds": 0.08,
+   "loop": false,
+   "use": "Footstep variant (randomise pitch 0.9-1.1)"
+  },
+  "footstep_2": {
+   "file": "assets/audio/sfx/footstep_2.wav",
+   "seconds": 0.08,
+   "loop": false,
+   "use": "Footstep variant (randomise pitch 0.9-1.1)"
+  },
+  "footstep_3": {
+   "file": "assets/audio/sfx/footstep_3.wav",
+   "seconds": 0.08,
+   "loop": false,
+   "use": "Footstep variant (randomise pitch 0.9-1.1)"
+  },
+  "jump": {
+   "file": "assets/audio/sfx/jump.wav",
+   "seconds": 0.22,
+   "loop": false,
+   "use": "Jump (cartoon boing up)"
+  },
+  "land": {
+   "file": "assets/audio/sfx/land.wav",
+   "seconds": 0.18,
+   "loop": false,
+   "use": "Land"
+  },
+  "slide_whistle_up": {
+   "file": "assets/audio/sfx/slide_whistle_up.wav",
+   "seconds": 0.55,
+   "loop": false,
+   "use": "Comedy rise (wall-run, big jump)"
+  },
+  "slide_whistle_down": {
+   "file": "assets/audio/sfx/slide_whistle_down.wav",
+   "seconds": 0.65,
+   "loop": false,
+   "use": "Comedy fall (fell off roof)"
+  },
+  "tackle": {
+   "file": "assets/audio/sfx/tackle.wav",
+   "seconds": 0.75,
+   "loop": false,
+   "use": "Tackle the groom (thud + boing)"
+  },
+  "whoosh": {
+   "file": "assets/audio/sfx/whoosh.wav",
+   "seconds": 0.35,
+   "loop": false,
+   "use": "Fast movement / swing"
+  },
+  "honk_1": {
+   "file": "assets/audio/sfx/honk_1.wav",
+   "seconds": 0.32,
+   "loop": false,
+   "use": "Goose honk"
+  },
+  "honk_2": {
+   "file": "assets/audio/sfx/honk_2.wav",
+   "seconds": 0.47,
+   "loop": false,
+   "use": "Goose double honk (angry)"
+  },
+  "honk_charge": {
+   "file": "assets/audio/sfx/honk_charge.wav",
+   "seconds": 0.75,
+   "loop": false,
+   "use": "Goose charging (HONKHONKHONK)"
+  },
+  "meow": {
+   "file": "assets/audio/sfx/meow.wav",
+   "seconds": 0.6,
+   "loop": false,
+   "use": "Cat meow (it knocked something over)"
+  },
+  "cat_knock": {
+   "file": "assets/audio/sfx/cat_knock.wav",
+   "seconds": 0.8,
+   "loop": false,
+   "use": "Something falls & shatters (alerts grandma)"
+  },
+  "balloon_squeak": {
+   "file": "assets/audio/sfx/balloon_squeak.wav",
+   "seconds": 0.4,
+   "loop": false,
+   "use": "Balloon animal squeak / bite"
+  },
+  "balloon_pop": {
+   "file": "assets/audio/sfx/balloon_pop.wav",
+   "seconds": 0.25,
+   "loop": false,
+   "use": "Balloon pop"
+  },
+  "alarm_ring": {
+   "file": "assets/audio/sfx/alarm_ring.wav",
+   "seconds": 1.0,
+   "loop": true,
+   "use": "Alarm clock boss ringing (loopable ~1s)"
+  },
+  "snooze_bonk": {
+   "file": "assets/audio/sfx/snooze_bonk.wav",
+   "seconds": 0.6,
+   "loop": false,
+   "use": "Hit the snooze button (BONK)"
+  },
+  "boss_hurt": {
+   "file": "assets/audio/sfx/boss_hurt.wav",
+   "seconds": 0.35,
+   "loop": false,
+   "use": "Boss damaged"
+  },
+  "boss_defeat": {
+   "file": "assets/audio/sfx/boss_defeat.wav",
+   "seconds": 3.9,
+   "loop": false,
+   "use": "Boss defeated (kaboom + bells)"
+  },
+  "router_beep": {
+   "file": "assets/audio/sfx/router_beep.wav",
+   "seconds": 0.24,
+   "loop": false,
+   "use": "Router beep"
+  },
+  "power_down": {
+   "file": "assets/audio/sfx/power_down.wav",
+   "seconds": 0.75,
+   "loop": false,
+   "use": "Unplug (power down)"
+  },
+  "power_up": {
+   "file": "assets/audio/sfx/power_up.wav",
+   "seconds": 0.65,
+   "loop": false,
+   "use": "Plug back in (power up)"
+  },
+  "slurp": {
+   "file": "assets/audio/sfx/slurp.wav",
+   "seconds": 0.9,
+   "loop": false,
+   "use": "Forced to eat soup (slurp)"
+  },
+  "gulp": {
+   "file": "assets/audio/sfx/gulp.wav",
+   "seconds": 0.2,
+   "loop": false,
+   "use": "Gulp"
+  },
+  "munch": {
+   "file": "assets/audio/sfx/munch.wav",
+   "seconds": 0.64,
+   "loop": false,
+   "use": "Balloon animals eating the cake"
+  },
+  "snore": {
+   "file": "assets/audio/sfx/snore.wav",
+   "seconds": 1.8,
+   "loop": true,
+   "use": "Tranquillised NPC snoring (loopable)"
+  },
+  "clue_found": {
+   "file": "assets/audio/sfx/clue_found.wav",
+   "seconds": 0.68,
+   "loop": false,
+   "use": "New dossier clue unlocked"
+  },
+  "wrong_target": {
+   "file": "assets/audio/sfx/wrong_target.wav",
+   "seconds": 0.68,
+   "loop": false,
+   "use": "Darted the wrong Gary (buzzer)"
+  },
+  "spotted": {
+   "file": "assets/audio/sfx/spotted.wav",
+   "seconds": 0.4,
+   "loop": false,
+   "use": "You were spotted! (!)"
+  },
+  "crowd_gasp": {
+   "file": "assets/audio/sfx/crowd_gasp.wav",
+   "seconds": 1.0,
+   "loop": false,
+   "use": "Office gasps"
+  },
+  "pickup": {
+   "file": "assets/audio/sfx/pickup.wav",
+   "seconds": 0.25,
+   "loop": false,
+   "use": "Pickup collected"
+  },
+  "confetti": {
+   "file": "assets/audio/sfx/confetti.wav",
+   "seconds": 0.3,
+   "loop": false,
+   "use": "Confetti pop"
+  },
+  "timer_tick": {
+   "file": "assets/audio/sfx/timer_tick.wav",
+   "seconds": 0.03,
+   "loop": false,
+   "use": "Countdown tick"
+  },
+  "mission_failed": {
+   "file": "assets/audio/sfx/mission_failed.wav",
+   "seconds": 2.75,
+   "loop": false,
+   "use": "Mission failed stinger (wah wah wah waaah)"
+  },
+  "mission_complete": {
+   "file": "assets/audio/sfx/mission_complete.wav",
+   "seconds": 1.68,
+   "loop": false,
+   "use": "Mission complete fanfare"
+  },
+  "gary_hum": {
+   "file": "assets/audio/sfx/gary_hum.wav",
+   "seconds": 5.5,
+   "loop": true,
+   "use": "The REAL Gary hums this (positional audio, loop). Decoys never hum."
+  }
+ },
+ "music": {
+  "music_menu": {
+   "file": "assets/audio/music/music_menu.wav",
+   "seconds": 17.45,
+   "loop": true,
+   "use": "Main menu / level select (spy jazz)"
+  },
+  "music_office": {
+   "file": "assets/audio/music/music_office.wav",
+   "seconds": 18.46,
+   "loop": true,
+   "use": "L1 Office: sneaky tip-toe"
+  },
+  "music_chase": {
+   "file": "assets/audio/music/music_chase.wav",
+   "seconds": 12.31,
+   "loop": true,
+   "use": "L2 Rooftop chase: fast & frantic"
+  },
+  "music_park": {
+   "file": "assets/audio/music/music_park.wav",
+   "seconds": 16.0,
+   "loop": true,
+   "use": "L3 Goose park: goofy oom-pah"
+  },
+  "music_grandma": {
+   "file": "assets/audio/music/music_grandma.wav",
+   "seconds": 22.5,
+   "loop": true,
+   "use": "L4 Grandma house: music-box waltz (creepy-cosy)"
+  },
+  "music_party": {
+   "file": "assets/audio/music/music_party.wav",
+   "seconds": 13.33,
+   "loop": true,
+   "use": "L5 Birthday party defence: chiptune polka"
+  },
+  "music_boss": {
+   "file": "assets/audio/music/music_boss.wav",
+   "seconds": 13.71,
+   "loop": true,
+   "use": "L6 Alarm clock boss fight"
+  }
+ }
+}
